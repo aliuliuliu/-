@@ -1,0 +1,506 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          （js组成）
+1.javascript语法     2. DOM 页面文档对象模型    3.BOM 浏览器对象模型
+                                                 （javascript语法 ）
+prompt（'请输入您的年龄'）   这是个输入框
+alert('浏览器弹出警示框')
+console.log('浏览器控制台打印输出信息')
+                                                      （变量）
+1.声明了一个age变量
+var age;
+2.赋值 把值存入这个变量中
+age = 10;
+3.输出结果
+console.log (age);
+4.变量的初始化
+var age =10;  声明变量同时赋值为10
+                                                       （数据类型）
+js 的变量数据类型是只有在运行过程中，根据等号右边的值来确定的
+js 是动态语言 变量的数据类型是可以变化的
+                                                     （简单数据类型）
+Number   数字型，包含整型值和浮点型，如21，.021  默认值 0
+Boolean  布尔值类型，如true，false，等价于1和0     默认值 false
+String  字符串类型，如 "张三" 注意咱们js 里面 字符串都带引号   ""
+Undefined  var a; 声明了变量a 但是没有给值 此时a= undefined  默认值undefined
+Null  var a= null; 声明了变量a为空值    默认值 null
+
+在js 中八进制前面加0，十六进制前面加0x   
+isNaN()   用来判断一个变量是否为非数字的类型，返回true 或者false
+                                                      （字符串转义符）
+都是\开头的 但是这些转义字符写到引号里面
+\n   换行   \\  斜杠\     \' 单引号  \''  双引号  \t   tab缩进  \b  空格 .b是blank的意思
+                                                   （字符串的长度）
+console.log (str.length);  检测获取字符串的长度
+                                                   （判断数据类型）
+console.log(typeof num)
+                                                   （字符串的拼接）+
+数值相加 字符相连
+console.log('沙漠'+'骆驼')        沙漠骆驼
+undefined 和数字相加 最后结果是NaN
+                                                      (数据类型转换)
+                                    (转换字符型 )
+1.把数字型转换为字符串型  toString（）
+var num =10;
+var str =num.toString();
+console.log(str);
+2.利用String（变量）
+console.log (String(num));
+                                      
+3.隐式转换  !!!!!!
+console.log （num+''）;
+                                   （转换数字型）
+1.console.log(parseInt(3)) ; 只能取整数
+2.console.log(parseFloat(3.14));   字符型转换数字型 得到是小数  浮点数
+                                     （运算符）
+算数运算符  +  -  *  /    %  加减乘除取余数
+                                        （比较运算符）
+<  >  >=  <=  ==   !=   ===   !==     小于号  大于号  大于等于号  小于等于号   判等号  不等号  全等 要求值和 数据类型都一致 
+                                         （逻辑运算符）
+&&  与     ||  或   ！ 非
+与  都相同才对     或   有一个相同就是对   非  对就是错
+                                             （赋值运算符）
+=   直接赋值
++=  -= 加减一个数后再 再赋值 
+*=   /=   %=   乘除 取余 后再赋值 
+                                                     （if）语句
+1.  if 的语句结构   如果 if
+  if（条件表达式） {
+    // 执行语句
+}
+2.  //执行思路  如果 if 里面的条件表达式结果为真 true 则执行大括号里面的 执行语句
+// 如果 if 条件表达式结果为假 则不执行大括号里面的语句 则执行if 语句后面的代码
+                                                   （else）语句
+else {
+//执行语句2
+}
+2.执行思路  如果表达式结果为真  那么执行语句1  否则执行语句2 
+小结   if 里面的语句1 和else 里面的语句2 最终只能有一个语句去执行  else后面直接跟大括号  
+                                                    （三元表达式）
+条件表达式 ？表达式1 ： 表达式2
+如果条件表达式结果为真 则返回  表达式1 的值  如果条件表达式 为假  则返回 表达式2 的值
+var age = prompt ('请输入0-59 之间的一个数字:');
+var age1 = age < 10 ? '0'+ age : age ;
+alert(age1);
+                                                       (switch 语句)
+1. switch 语句也是多分支 语句 也可以实现多选1 
+2. 语法结构 switch 转换 开关 case  下例子或者选项的意思
+switch（表达式） {
+         case value1 :
+                  执行语句1；
+                  break；
+          case value2 :
+                  执行语句2；
+                  break；
+          case value3 :
+                  执行语句3；
+                  break；
+             default；
+          执行最后语句
+}
+3. 执行思路  利用我们的表达式的值  和case 后面的选项相匹配  如果匹配上 就执行 case  里面的语句  如果都没有匹配上 那么执行  default  里的语句
+注意事项
+1.我们开发里面 表达式我们经常写成变量
+2.我们num 的值 和case 里面的值相匹配的时候是 全等 必须是值和数据类型一致才可以  num=== 1 
+3. break 如果当前的case 里面没有break 则不会推出 switch 是继续执行下一个case
+
+
+...............................
+                                                    (while  循环)
+while （条件表达式） {
+        // 循环体
+}
+2.执行思路  当条件表达式结果为true 则执行循环体 否则 推出循环
+3.代码验证
+var num =1 ；
+while （num<=100）{
+console.log ('好安逸')
+num ++ ；
+}
+4.里面应该也有计数器 初始化变量
+5. 里面应该也有操作表达式  完成计数器的更新  防止死循环、
+                                                       （do while ）
+1.do while 循环 语法结构 
+do {
+     //循环体
+} while（条件表达式） 
+2.执行思路  跟while 不同的地方在于 do while 先执行一次循环体  再判断条件 如果条件表达式为真 则继续执行循环体 否则退出循环
+3. 代码验证 
+var i = 1;
+do {
+  console.log('how  are you') ;
+  i++;
+} while (i<= 100)
+4. 我们的 do while 循环体至少执行一次
+                                                  （continue  关键字）
+continue 关键字 用于立即跳出本次循环 继续下一次循环 （本次循环体中 continue 之后的代码就会少执行一次）
+                                                    （break  关键字）
+break 退出整个循环
+                                                           （数组）
+1.利用数组字面量创建数组[1,2,3,pink ] ;
+2.我们数组里面的数据 一定用逗号分隔
+3.数组里面的数据 比如1,2, 我们称为数组元素
+4.获取数组元素 格式 数组名[ 索引号]  索引号从 0开始
+                                                              （遍历）
+遍历 就是把数组中的每个元素从头到尾都访问一次（类似于我们每天早上学生的点名）
+                                                   （数组长度length）
+数组名.length
+                                                    (数组分割字符串)
+var max = '';
+ max = max + age[i] + '|';
+                                                    （新增数组元素）
+1. 修改length长度
+arr.length= 5;   把我们数组的长度修改为了 5 里面应该有5个元素  没有值得元素默认 undefined
+2.修改索引  追加数组元素
+age[3] = 'pink'  不要直接给 数组名赋值 否则里面的数组元素都没有了
+                                                     （冒泡排序）
+var age =[5,4,3,2,1]
+for (var i = 0; i <=age.length -1;i++) {     //外层 循环管趟数
+for（var j = 0；j<=age.length -i -1; j++）{  //里面的循环管 每一趟的交换次数
+//每部交换变量
+if (age[j]>age1[j+1]){
+var age2 =age[j];
+age[j]=age1[j+1]
+age1[j+1]=age2
+}
+}
+                                                             （函数）
+函数使用分为两步： 声明函数 和 调用函数
+1. 声明函数
+function 函数名（）{
+     // 函数体
+}
+function sayHi () {
+     cousole.log('hi--')
+}
+(1)  function  声明函数的关键字  全部小写
+(2)  函数是做某件事情，函数名一般是动词  sayHi
+(3)  函数不调用  自己不执行
+2. 调用函数
+函数名();
+sayHi ();
+调用函数 的时候千万不要忘记加小括号
+                                                          （函数的参数）
+2.我们可以利用函数的参数实现函数重复不同的代码
+function  函数名（形参1,形参2....）{  //声明函数的小括号里面是  形参 （形参上的参数）
+}
+函数名（实参1，实参2 ....） //在函数调用的小括号里面是实参 （实际的参数）
+1.如果实参的个数和形参的个数一致则正常输出结果
+2.如果实参的个数多余形参的个数  会取到形参的个数
+3.如果实参的个数小于实参的个数  多的形参定义为 undefined 最终的结果就是NaN
+建议 我们尽量让实参和形参个数相匹配 
+                                                       （函数的返回值格式）
+function 函数名（）{
+     return 需要返回的结果
+}
+函数名（）;
+1.我们函数只是实现某种功能  最终的结果需要返回给函数的调用者 函数名（）  通过 retrun  实现的
+2. 只要是函数遇到return 就把后面的结果 返回给函数的调用者  函数名（）= return 后面的结果	
+注意 return 后面代码不会被执行
+返回的结果是最后一个值
+函数如果有return  则返回的是  return 后面的值，如果函数没有return  则返回undefined 
+                                             （break  continue  return 的区别）
+break  结束当前的循环体 （如 for while）
+continue  跳出本次循环 继续执行下次循环 （如 for while）
+return   不仅可以退出循环 还能返回return语句中的值  同时还可以结束当前的函数体内的代码
+                                                (arguments  的使用)
+arguments  展示形式是一个伪数组 
+具有 length 属性 
+按索引方式储存数据
+不具有的数组的 push （）pop（） 等方法
+只有函数才有arguments  每个函数都内置好了arguments 
+                                                       （倒序排列）
+function reverse (arr) {
+        var newArr = [];
+        for (var i =arr.length - 1 ; i >= 0; i--){
+            newArr [newArr.leng]= arr [i]
+        }
+            return newArr ;
+        }
+        console.log(reverse([1,2,3,5,4]));
+                                                        （冒牌排序）
+function sort (arr) {
+        for (var i = 0; i <= arr.length; i++){
+            for (var j = 0; j <= arr.length - i - 1; j++){
+                if (arr[j] < arr [j + 1]){
+                    var temp =  arr[j];
+                    arr [j] = arr[j+1] ;
+                    arr [j+1] = temp ;
+                }
+            }
+        }
+             return arr ;
+        }
+        var ww = sort([5,8,9,6,4,3,2,7])
+        console.log(ww);
+                                                （函数两种声明方式）
+1.利用函数关键字自定义函数（命名函数）
+function (fn){
+//循环体
+}
+fn () ;
+2.函数表达式(匿名函数)
+ var fun= function() {
+ //循环体
+}
+fun ();
+// (1)fun 是变量名 不是函数名
+// (2)函数表达式声明方式跟声明变量差不多  只不过变量里面存的是值 而函数表达式里面存的是函数
+(3) 函数表达式也可以进行传递参数
+                                                    (作用域)
+就是 代码名字（变量） 在某个范围内起作用和效果 目的是伪类为了提高程序的可靠性 更重要的是减少命名冲突
+                    （js 的作用域 (es6 )之前：全局作用域  局部作用域）
+3.全局作用域 ：整个script标签 或者是一个单独的js文件
+4.局部作用域 ： 在函数内部就是局部作用域 这个代码的名字只在函数内部起效果和作用
+                                              （变量作用域）
+执行效率来看全局变量和局部变量
+1.全局变量只有浏览器关闭的时候才会销毁  比较占内存资源
+2.局部变量  当我们程序执行完毕后就会销毁  比较节约内存资源
+                                               （作用域链）
+内部函数访问外部函数的变量 采取的是链式查找的方式来决定取哪个值 这种结构我们称为作用域链
+                                                 (预解析)
+1.我们 js 引擎 运行js 分为两步 ：预解析  代码执行
+（1）. 预解析 js 引擎会把js 里面所有 var 还有 function 提升到当前作用域的最前面
+（2）.代码执行  按照代码书写的循序从上往下执行
+2.预解析 分为 变量预解析(变量提升) 和函数预解析（函数提升）
+（1）.变量提升 就是把所有的变量声明提升到当前作用域最前面  不提升赋值操作
+（2）.函数提升  就是把所有的函数声明提升到当前作用域的最前面  不用调用函数
+                                                 （对象）
+1.利用对象字面量创建对象{}
+var obj = {}；
+var obj ={
+      uname:'张三疯',
+      age:18,
+      sex:'男',
+      satHi:function () {
+       console.log ('hi--');
+}
+}
+(1).里面的属性或者方法我们采取键值对的形式  键 属性名： 值 属性值
+(2).多个属性或方法中间用逗号隔开的
+(3).方法冒号后面跟的是一个匿名函数
+2.使用对象 
+(1).调用对象的属性  我们采取 对象名.属性名
+console.log(obj.uname);
+(2).调用对象还有一种方法  对象名['属性名']
+console.log (obj['uname']);
+(3).调用对象的方法   sayHi  对象名.方法名()  千万别忘记添加小括号
+obj.sayHi();
+                                               （变量 属性 函数 方法 的区别）
+1.变量和属性的相同的 他们都是用来存储数据的 
+不同点 
+变量 单独声明并赋值  使用的时候直接写变量名 单独存在
+属性  在对象里面的 不需要声明的 使用的时候必须是  对象.属性
+2.函数 和 方法的相同点 都是实现某种功能  做某件事
+函数是单独声明 并且 调用的 函数名()  单独存在的
+方法 在对象里面 调用的时候  对象.方法()
+                                                     (利用 new object  创建对象)
+var obj = new Object（）;
+obj.uname = '张三丰';
+obj.age =19;
+obj.sayHi = function(){
+console.log('nihao')
+}
+(1).我们是利用 等号 = 复制的方法 添加对象的属性 和方法
+(2)每个属性和方法之间 用分号结束
+                                                     ( 利用构造函数建立对象)
+因为我们一次创建一个对象  里面很多的属性和方法是大量相同的  我们只能复制
+因此我们可以利用函数的方法 重复这些相同的代码  我们就把这个函数称为 构造函数
+又因为这和函数不一样 里面封装的不是普通代码 而是对象
+构造函数  就是把我们对象里面一些相同的属性 和方法抽象出来封装到函数里面
+function  构造函数名(){
+       this.属性 = 值 ;
+       this.方法 =function(){
+}
+}
+new 构造函数名();
+构造函数不需要 return 返回结果
+function Star(uname,age,sex){
+            this.name = uname;
+            this. age = age ;
+            this.sex  = sex ;
+            this.sing = function(sang) {
+              console.log(sang);
+             }
+        }
+        var ldh = new Star ('刘德华',18,'男')
+        console.log(ldh.name);
+        console.log(ldh.age);
+        ldh.sing('冰雨')
+                                                                     （new）
+new关键字执行过程
+1.new 构造函数可以在内存中创建一个空的对象
+2.this 就会指向刚才创建的空对象
+3.执行构造函数里面的代码  给这个空对象添加属性和方法
+4.返回这个对象
+                                                （for  in）
+for （var k in obj）{
+   console.log(k);  //  k 变量 输出  得到的是 属性名
+   console.log(obj[k]) //obj[k] 得到的是 属性值
+}
+我们使用  for in 里面变量  我们喜欢 写 k 或者 key
+                                                  （内置对象）
+                                                   Date()
+Date() 时期对象  是一个构造函数  必须使用 new 来调用创建我们的日期对象
+                                           （输出当前的时间）
+function getTime (){
+            var time = new Date ();
+            var h = time.getHours();
+            h = h < 10 ? '0'+ h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0'+ m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0'+ s: s;
+            return h+':'+m+':'+s ;
+        }
+        console.log(getTime());
+                                           （返回总的毫秒数）
+var date1 = +new Date();
+        console.log(date1);
+                                     (h5 新增的 获得总的毫秒数)
+console.log(Date.now()); 
+                                                （倒计时）
+ function counDown(time){
+            var  time1 = +new Date (); 
+            var  time2 = +new Date (time);
+            var times = (time2 - time1 ) / 1000 ;
+            var d = parseInt(times /60 / 60 /24);  //天
+            d = d < 10 ? '0' + d : d ;
+            var h = parseInt(times /60 / 60 %24);   // 小时
+            h = h < 10 ? '0' + h : h ;
+            var m = parseInt(times /60 %60 );       // 分
+            m = m < 10 ? '0' + m : m ;
+            var s = parseInt(times %60 );           // 秒
+            s = s < 10 ? '0' + s : s ;
+            return '距离结束时间还有：'+ d + '天' + h + '小时' + m + '分' + s +'秒';
+        }
+        var gettime  = counDown('2021-7-16 00:00:00');
+        console.log(gettime);
+                                            （创建数组的两种方式）
+1.利用数组字面量
+var arr = [ 1,2.3];
+console.log (arr[0]);
+2.利用 new Array()
+var arr1 = new Array();    创建了一个空数组
+var arr1 = newArray(3);    这个3 表示 数组长度为 3  里面有3个空的数组元素
+var arr1 = newArray(2,3);   等价于[2,3]  这样写表示  里面有2 个数组元素 是 2 和3 
+console.log(arr1)
+                                                (检测是否为数组)
+(1). instanceof  运算符  他可以用来 检测是否为数组
+var arr = [] ;
+console.log(arr instanceof Array);
+(2). Array.isArray(参数)  h5 新增方法  ie9以上版本支持
+var att =[];
+console.log (Array.isArray(arr));
+                                        （添加删除数组元素的方法）
+                                                    push()
+1. push() 在我们数组的末尾  添加一个或多个数组元素  push 推
+var arr = [1,2,3];
+arr.push(4);
+console.log (arr)
+1.push 是可以给数组追加新的元素
+2.push() 参数直接写  数组元素就可以了
+3.push 完毕之后  返回的结果是  新数组的长度
+4. 原数组也会发生变化
+                                                        unshift()
+2.unshift()  在我们数组的开头  添加一个或多个数组元素
+var arr = [1,2,3];
+arr.unshift(1,2,'pink老师');
+console.log(arr)
+1.unshift() 是可以给数组追加新的元素
+2.unshift() 参数直接写  数组元素就可以了
+3.unshift 完毕之后  返回的结果是  新数组的长度
+4. 原数组也会发生变化
+                                                pop()
+3.pop() 他可以删除数组的最后一个函数
+ var arr = [1,2,3];
+arr.pop();
+console.log (arr);
+1.pop() 是可以删除数组的最后一个元素  记住一次只能剔除一个元素
+2.pop() 没有参数
+3.pop完毕之后  返回的结果是  删除的那个元素
+4. 原数组也会发生变化
+                                                    shift()
+4.shift() 他可以删除数组的最后一个函数
+ var arr = [1,2,3];
+arr.shift();
+console.log (arr);
+1.shift() 是可以删除数组的第一个元素  记住一次只能剔除一个元素
+2.shift() 没有参数
+3.shift完毕之后  返回的结果是  删除的那个元素
+4. 原数组也会发生变化
+                                                      (倒序数组)
+ function arr(age){
+            if (age instanceof Array){
+            var age1 = [];
+            for(var i = age.length - 1; i >= 0; i-- ){
+                age1[age1.length] = age[i];
+            }
+            return age1 ;
+        }
+        else {
+            return '这个参数必须要求是数组格式  [1,2,3]';
+        }
+    }
+        console.log(arr([1,2,3,]));
+        console.log(arr(1,2,3));
+                                                   （数组排序）
+1.翻转数组 
+var  arr = ['pink','red','blue']
+arr.reverse();
+console.log(arr);
+2.数组排序（冒牌排序）
+       var  arr = [1,6,30,5,8,20,4,7];
+        arr.sort(function(a,b){
+            return a - b ;    //升序的顺序排列
+            return b - a ;   // 降序的顺序排列
+        });
+        console.log(arr);
+                                          （返回数组元素索引号的方法）
+ indexOf(数组元素) 作用就是返回该数组元素的索引号  从前面开始查找
+ 它只返回第一个满足条件的索引号
+ 它如果在该数组里面找不到元素 则返回的是 -1
+   var arr = ['red','green','blue','pink'];
+       console.log(arr.indexOf('pink'));
+                                             （数组去重）
+1.目标：把旧数组里面不重复的元素选取出来放到新数组中  重复的元素只保留一个 放到新数组里面去
+2. 核心算法 ：我们遍历旧数组 然后拿着旧数组元素去查询新数组  如果改元素新数组里面没有出现过  我们就添加 否则不添加
+3. 我们怎知道 该元素没有存在？ 利用 新数组.indesOf(数组元素)  如果返回值是 -1 就说明新数组里面没有该元素 
+//  封装一个 去重函数  unique  独一无二
+function unique(arr){
+            var newarr = [];
+            for(var i = 0; i < arr.length; i++){
+                if (newarr.indexOf(arr[i]) === -1){
+                    newarr.push(arr[i]);
+                }
+            }
+            return newarr;
+ }
+ var doem = unique(['a','c','b','b','x','f','x','a'])
+  console.log(doem);
+                                             （数组转换为字符串）
+1.toString() 将我们的数组转换为字符串
+var age = [1,2,3]
+console.log(arr.toString(age));
+2. join(分隔符)
+ var arr1 = ['green','red','pink'];
+  console.log(arr1.join('&'));     //green&red&pink
+                                            （记录字符中某个元素次数 ）
+var age = "aogogdododofgopp";
+        // console.log(age.indexOf('o'));
+        var index = age.indexOf('o');
+        var ww = 0;
+        while (index !== -1) {
+            console.log(index);
+            index = age.indexOf('o', index + 1);
+            ww++;
+        }
+        console.log('次数'+ww);
+                                   ( 字符串对象  根据字符串返回位置)
+字符串对象  根据字符串返回位置  str.indexOf('要查找的字符',[起始的位置])
+var arr = '改革春风吹满地,春天来了';
+            console.log(arr.indexOf('春',4));
+            console.log(arr.indexOf('春',1));	
+----------				//简单数据类型  null 返回的是一个空的对象  object
+//如果有个变量 我们以后打算存储为对象  暂时没想好放啥  这时候就给null
+1. 简单数据类型  是存放在栈里面 里面直接开辟一个空间存放的是值
+2. 复杂数据类型  首先在栈里面存放地址  十六进制表示然后这个地址指向推里面的数据
+	

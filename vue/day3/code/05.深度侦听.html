@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="info.username">
+    </div>
+    <script src="/lib/vue.js"></script>
+    <script src="/lib/jquery.min.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                info: {
+                    username: 'admin'
+                }
+            },
+            //所有的侦听器 都应该被定义到 watch 节点下
+            watch: {
+                // info:{
+                //     handler(newval){
+                //         console.log(newval);
+                //     },
+                //     deep:true,
+                //     immediate:true
+                // }
+                // 如果要侦听的是对象的子属性的变化 则必须包裹一层单引号
+                'info.username'(newval){
+                        console.log(newval);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>         不是html标签 只作为注明版本标签
+<html lang="en">        标注 编译标签类型
+<head>             头标签
+<title>           网站标题 标签
+<h1>         标题标签 只有<h1>-<h6>
+<p>         段落标签
+<br>       段落边（单标签）
+<b>        加粗标签
+<em>      斜体标签
+<del>      删除标签
+<ins>      下划线标签
+<body>      主要内容标签
+<footer>     尾标签
+<nav>      导航栏标签
+<div>       大盒子 自己占一行
+<span>      小盒子  跨度 跨距
+<img src=" ">     插入图片标签 “src ”为img属性
+<alt>          图片显示不出来 变为文本显示的标签
+<title>        鼠标放在图片上 提示的文字的标签
+<width>     宽度
+<heigth>    高度
+<border>     边框
+/      下级路径
+../    上级路径
+\      绝对路径 
+<a href=" ">    内容</a> 超链接 标签 “href”为a的属性、可以为下载压缩包 超链接！ #空链接
+target      打开窗口方式 默认的值是_self 当前窗口打开页面 _blank 新窗口打开页面
+<a href=“#名字”>   <h1 id="名字"> 锚点链接
+
+                                                         （单元格）
+<table>     大表格  表格所有内容都要放在<table> 里
+<tr>    横向表格
+<th>   表头
+<td>  单元格数据 
+                                                           (表格属性)
+align             (left 靠左  )（center 居中）（right 靠右）（规定表格相对周围的对齐方式）  
+border         （1或“ ”）（规定表单元是否拥有边，默认为“ ”，表示没有表框）
+cellpadding （像素值）（规定单元边沿与其内容之间的空白 默认1像素）
+cellspacing  （像素值）（规定单元格之间的空单，默认2像素）
+width          （像素值或百分比）（规定单元格的宽度）
+heigth         （像素值或百分比）（规定单元格的高度）
+ <thead>  表格头部区域标签
+<tbody>  表格身体区域标签 
+rowspan="合并单元格个数"    跨行合并
+colspan= "合并单元格个数"      跨列合并
+                                                       （列表标签）
+                                                        （无序列表）
+<ul> 表示html页面中项目的无序列表，一般会以项目符号呈现列表项。<ul>标签 只能插<li>标签
+<li>   可以容纳所有元素
+                                                         （有序列表）
+<ol>  有序列表   <ol>标签 只能插<li>标签
+<li>    可以容纳所有元素
+                                                           （自定义列表）
+<dl>   用于定义描述列表 会于<dt><dd> 一起使用   只能放 <dt>  <dd> 
+<dt>   可以容纳所有元素
+<dd>  可以容纳所有元素
+                                                               （表单域）
+                                       <ui                          (input)
+<form>   <form actiom="demo.php"  method="POST" name="表单域命名">
+<input>   单标签  <input type="text文本或 passwor密码隐藏"> text 文本     password 密码  
+<input type="radio" >     单选按钮
+<input type="radio"name="1" >   例如性别按钮?
+<input type="checkbox">     多选按钮
+value     输入注释 
+<input type="text文本或 passwor密码隐藏"  value="输入注释">
+input     不仅有type  还有 value（注释），name（用于性别是name一致才可以）
+checked       默认按钮
+maxlength   规定字段中的字符的最大长度
+<button></button>  提交按钮
+
+                                                                  (select)下拉列表
+<select>   双标签   至少包含<option>
+<option>    selected=selectde默认选项
+                                                                      （textarea 留言框）
+<textarea>   双标签  cols= “每行中字符数” rows=“显示的行数”
+                                                                      (html5)
+新增加语义化标签
+<header>  :头部标签
+<nav>       :  导航 标签
+< article>  : 内容标签
+< section> :  块级标签
+<aside>  :  侧边栏 标签
+<footer>    尾部标签
+                                                                   （多媒体 标签）
+                                                <audio>（音频）
+<audio>   支持  oggvorbis   mp3    双标签
+audio  属性：
+autoplay      自动直接播放  谷歌 autoplay 属性给禁用了
+controls      向用户显示控件 比如播放按钮
+loop            循环播放
+src ：url       要播放的音频的url
+<audio  controls="controls ">
+        <source src="images" type="audio/mpeg">
+        <source src="images" type="audio/ogg">
+                       不同浏览器兼容问题
+</audio>
+                                                 <video> (视频)
+<video>   支持  oggvorbis   mp4    双标签
+autoplay      自动直接播放  谷歌 autoplay 属性给禁用了
+controls      向用户显示控件 比如播放按钮
+loop            循环播放
+poster    值 imgurl    加载等待的画面图片
+muted      静音播放
+<audio  controls="controls ">
+        <source src="images" type="audio/mpeg">
+        <source src="images" type="audio/ogg">
+                       不同浏览器兼容问题
+</audio>
+                                                （新增input 表单,表单属性）
+type="email"       Email 类型
+type="url"            url   类型
+type="date"         日期类型
+type="time"         时间类型
+type="month"     月类型
+type="week"       周类型
+type="number"   数字类型
+type="tel"           手机号码
+type="search"     搜索框
+type="color"   生成一个颜色选择表 
+                                                          （新增input表单属性）
+required    内容不能为空    必填
+placeholder    提示文本  表单的提示信息 存在默认值将不显示
+autofocus       自动获得光标
+autocompiete   on/off   name="username"   历史痕迹
+(type="file"
+multiple        多文本提交)

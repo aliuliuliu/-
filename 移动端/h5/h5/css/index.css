@@ -1,0 +1,225 @@
+body {
+    width: 100%;
+    height: 1000px;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: -apple-system,Helvetica,sans-serif;
+    color: #666;
+    line-height: 1.5;
+    background-color: #f6f6f6;
+}
+.app{
+    height: 45px;
+}
+.img {
+    vertical-align:middle ;
+}
+.app  ul li {
+    float: left;
+    height: 45px;
+    background-color: #333333;
+    line-height: 45px;
+    color: #fff;
+    text-align: center;
+}
+.app ul li:nth-child(1){
+    width: 8%;
+}
+.app ul li:nth-child(2){
+    width: 10%;
+    vertical-align: middle;
+}
+.app ul li:nth-child(3){
+    width: 57%;
+}
+.app ul li:nth-child(4){
+    width: 25%;
+    background-color: #F63515;
+}
+.search-wrap{
+    /* margin-top: 10px; */
+    overflow: hidden;
+    position: fixed;
+    height: 44px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    z-index: 999;
+}
+.search-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 44px;
+    /* background-color: pink; */
+}
+.search-btn::before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png);
+    background-size:20px 18px ;
+    margin: 14px  0 0 15px;
+}
+.search-login{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    /* background-color: purple; */
+    color: #fff;
+    line-height: 44px;
+    text-align: center;
+}
+.search {
+    position:relative;
+    height: 30px;
+    background-color: #fff;
+    margin: 0 40px;
+    border-radius: 15px;
+    margin-top: 7px;
+}
+.jd-iocn{
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    background-color: pink;
+    background: url(../images/jd.png)no-repeat;
+    background-size:20px 15px ;
+}
+.jd-iocn::after {
+    position: absolute;
+    right: -8px;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #ccc;
+}
+.sou {
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    width: 18px;
+    height: 15px;
+    background-color: pink;
+    background: url(../images/jd-sprites.png) no-repeat -81px 0;
+    background-size: 200px auto;
+}
+input {
+    position: absolute;
+    top: -6px;
+    left: 70px;
+    height: 25px;
+    width: 200px;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    outline-style: none;
+    color: #ccc;
+}
+.focus{
+    position: relative;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;                                         
+}
+.focus ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%;
+}
+.focus ul li {
+    float: left;
+    width: 414px;
+    margin: 0 auto;
+}
+.focus ul li img {
+    width: 100%;
+    height: 100%;
+}
+.focus ol {
+    position: absolute;
+    bottom: -16px;
+    left: 100px;
+}
+.focus ol li {
+    float: left;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+.current {
+    background-color: rgb(255, 0, 0);
+}
+/* nav */
+nav {
+    overflow: hidden;
+}
+nav a{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+nav a img {
+    width: 40px;
+    height: 40px;
+    margin: 10px  0 0  0 ;
+} 
+nav span {
+    display: block;
+    font-size: 12px;
+    color: #666666;
+}
+.box {
+    width: 100%;
+    text-align: center;
+    border: radius 10px;
+    overflow: hidden;
+}
+.box .box1 {
+    position: relative;
+    width: 25%;
+    float: left;
+    height: 120px;
+    background-color: rgb(255, 255, 255);
+}  
+.box1 span {
+    display: block;
+    /* margin-top: 22px; */
+
+}
+.box1 h1 {
+    font-weight: 800;
+    color: #000;
+    font-size: 18px;
+    width: 100%;
+    height: 26px;
+}
+.box1 img {
+    /* position: absolute;
+    bottom: 0; */
+    width: 60px;  
+}
+.xinren {
+    width: 100%;
+    height: 34px;
+    background: url(../upload/xinren.jpg) no-repeat;
+    background-size: 100%;
+}
+.one1 {
+    width: 100%;
+}
+.one1 ul li {
+    width: 25%;
+    height: 122px;
+    float: left;
+}

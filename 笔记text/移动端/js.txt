@@ -1,0 +1,64 @@
+                                                           （触屏事件touch）
+触屏tuoch事件                                     说明
+touchstart                                          手指触摸到一个DOM元素时触发
+touchmove                                        手指在一个DOM元素上滑动时触发
+touchend                                           手指从一个DOM元素上移开时触发
+                                                                        （ 触摸事件对象）
+触摸列表                                                说明
+touches                                                正在触摸屏幕的所有手指的一个列表
+targetTouches   （常用）                      正在触摸当前DOM 元素上的手指的一个列表
+changedTouches                                   手指状态发生了改变的列表 从无到右 从有到无的变化
+                                                            （移动端拖动元素）
+1.touchstart touchmove touchend  可以实现拖动元素
+2.但是拖动元素需要当前手指的坐标 我们可以使用 targetTouches[0]里面的pageX pageY
+3.移动端拖动的原理 手指移动中 计算出手指移动的距离 然后用盒子原来的位置 +手指移动的距离
+4.手指移动的距离 手指滑动中的位置 减去 手指刚开始触摸的位置
+拖动元素三部曲
+（1）触摸元素touchstar ：获取手指初始化坐标 同时获得盒子原来的位置
+（2）移动手指touchmove：计算手指的滑动距离 并且移动盒子
+（3）离开手指 touchend
+注意：手指拖动也会触发滚动屏幕所以这里要阻止默认的屏幕滚动e.preventDefault();
+出错环节 盒子没加定位 ！！！！！
+click延时解决方案
+移动端click 事件会有300ms的延时 原因是移动端屏幕双击会缩放 double to zoom 页面
+解决方案
+1.禁止缩放 浏览器禁用默认的双击缩放行为 并且去掉 300ms的点击延迟
+<meta name ="viewport" content = "user-scalable = no">
+2.利用touch 事件自己封装这个事件解决300ms 延迟
+原理就是：
+1.当我们手指触摸屏幕 记录当前触摸时间
+2.当我们手指离开屏幕 用离开的时间减去触摸的时间
+3.如果时间小于150ms 并且没有滑动过屏幕 那么我们就定义为点击
+                                                         移动端常用开发插件
+https://www.swiper.com.cn/download/index.html
+https://www.superslide2.com
+https://github.com/cubiq/iscroll
+移动端视频插件  zy.media.js
+                                                                （本地存储）
+1.数据存储在用户浏览器中
+2.设置， 读取方便  甚至页面刷新不会丢失数据
+3.容量较大 sessionStorage约5M ， localStorage约20M
+4.只能存储字符串 可以将对象 JSON.stringify（）编码后存储
+                                                       (window.sessionStorage)
+1.生命周期为关闭浏览器窗口
+2.同一个页面下数据可以共享
+3.以键值对的形式存储使用
+存储数据：
+sessionStorage.setltem(key,value)
+获取数据：
+sessionStorage.getltem(key)
+删除数据：
+sessionStorage.removeltem(key)
+删除所有数据：
+sessionStorage.clear()
+                                                              (window.loaclStorage)
+1.生命周期永久有效  排除手动删除 否则关闭页面也会存在
+2.可以多窗口（页面）共享（同一浏览器可以共享）
+3.以键值对的形式存储使用
+loaclStorage.setltem(key,value)
+获取数据：
+loaclStorage.getltem(key)
+删除数据：
+loaclStorage.removeltem(key)
+删除所有数据：
+loaclStorage.clear()

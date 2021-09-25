@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 注意 在浏览器中需要引用 template-web.js 文件-->
+    <!-- 强调 模板引擎不关心你的字符串内容 只关心自己能 认识的模板标记语言  例如 {{}}-->
+    <!-- {{}} 语法被称为 mustacha 语法  八字胡啊 -->
+    <script src="./node_modules/art-template/lib/template-web.js"></script>
+    <script type="text/template" id="tpl">
+        大家好 我叫：{{ name }}
+        我今年{{ age }} 岁了
+        我来自{{ province }}
+        我喜欢{{ each hobbiex }}{{ $value }}{{ /each }}
+    </script>
+    <script>
+        var ret = template('tpl', {
+            name: 'jack',
+            age: 18,
+            province:'北京市',
+            hobbiex:[
+                '写代码',
+                '打游戏',
+                'basskerdboll'
+            ]
+        })
+        console.log(ret);
+    </script>
+</body>
+
+</html>

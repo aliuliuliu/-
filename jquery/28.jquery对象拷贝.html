@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            // var targetObj = {};
+            // var obj = {
+            //     id:1,
+            //     name:"andy"
+            // }
+            // $.extend(targetObj,obj);
+            // console.log(targetObj);
+            // var targetObj = {
+            //     id:0
+            // };
+            // var obj = {
+            //     id:1,
+            //     name:"andy"
+            // }
+            // $.extend(targetObj,obj);
+            // console.log(targetObj);//会覆盖掉targetObj 里面原来的数据
+            var targetObj = {
+                id:0,
+                msg:{
+                    age:'nihao'
+                }
+            };
+            var obj = {
+                id:1,
+                name:"andy",
+                msg:{
+                    ww:18
+                }
+            }
+            $.extend(true,targetObj,obj);
+            // console.log(targetObj);//会覆盖掉targetObj 里面原来的数据
+            // 1.浅拷贝是把被拷贝的对象复杂数据类型中的地址拷贝给目标对象 修改目标对象会影响被拷贝对象
+            targetObj.msg.age = 20;
+            // console.log(targetObj);
+            // console.log(obj);
+            //2. 深拷贝 前面加true 完全拷贝（拷贝的对象而不是地址）修改目标元素不会影响被拷贝对象    
+            // targetObj.msg.age = 20;
+            console.log(targetObj);
+            console.log(obj);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

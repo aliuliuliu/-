@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.立即执行 函数  不需要调用 立马能够自己执行的函数
+        function fn() {
+            console.log(1);
+        }
+        fn();
+        //2.写法
+        // 1.(function(){})()  或者 2.(function(){}())
+        (function (a, b) {
+            console.log(a + b);
+        })(1, 2); //第二个下括号可以看做是 调用函数
+        (function sun(a, b) {
+            var num = 10; // 局部变量
+            console.log(a + b);
+        }(2, 3))
+        //3.立即执行函数最大的作用就是 独立 创建了一个作用域 里面的变量都是局部变量 不会有命名冲突的情况
+    </script>
+</body>
+
+</html>

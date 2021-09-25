@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var age = [1,5,3,2,4];
+        for (var i = 0; i <=age.length - 1; i++){
+            for (var j = 0; j<=age.length - i - 1; j++){
+                if (age[j]< age[j+1]){
+                    var age1 = age[j];
+                    age[j] = age[j+1] ;
+                    age[j+1] = age1 ;
+                }
+            }
+        }
+        console.log(age);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

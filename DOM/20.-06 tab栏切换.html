@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .w {
+            width: 1000px;
+            margin: 100px auto;
+        }
+        .one ul li  {
+            height: 40px;
+            padding: 0 20px;
+            float: left;
+        }
+        .one{
+            width: 800px;
+            height: 40px;
+            background-color: rgb(216, 216, 216);
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .one1 {
+            background-color: rgb(211, 23, 9);
+            color:rgb(216, 216, 216)
+            
+        }
+        .two1 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="w">
+        <div class="one">
+            <ul>
+                <li class="one1">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（5000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="two">
+        <div class="two1" style="display:block">1111111</div>
+        <div class="two1">222222</div>
+        <div class="two1">333333333</div>
+        <div class="two1">4444444444</div>
+        <div class="two1">55555555</div>
+    </div>
+    </div>
+    <script>
+        var one = document.querySelector('.one');
+        var one1 = document.querySelectorAll('li')
+        var two1 = document.querySelectorAll('.two1')
+        //for 循环绑定点击事件
+        for(var i = 0; i < one1.length;i++){
+            one1[i].setAttribute('index', i);
+            one1[i].onclick = function (){
+                //干掉所有人  其余的li 清除 class 这和类
+                for(var i = 0; i < one1.length; i++){
+                    one1[i].className = '';
+                }
+                //留我自己
+                this.className = 'one1';
+                // this.style.cursor = 'pointer';
+                var index = this.getAttribute('index')
+                //干掉所有人  让其余的 otwo1 这些div 隐藏
+                for(var i = 0; i < two1.length;i++){
+                    two1[i].style.display = 'none';
+                }
+                //留下我自己 让对应的 two1 显示出来
+                two1[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

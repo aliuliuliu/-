@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .class{
+            background-color: red;
+            color: #999;
+            font-size: 24px;]
+            margin: 100px ;
+        }
+    </style>
+</head>
+<body>
+    <div>文字</div>
+    <script>
+        // 1.获取元素
+        // s                                                                                                                                              
+        var div = document.querySelector('div');
+        // 2.注册事件  处理程序
+        div.onclick = function(){
+            // div.style.backgroundColor = 'purple'
+            //里面的属性 采取驼峰命名法
+            //让我们当前元素的类名改为  class
+            this.className = 'class'
+        }
+    </script>
+</body>
+</html>

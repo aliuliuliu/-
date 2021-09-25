@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 132px;
+            /* background-color: pink; */
+            text-align: center;
+            margin: 100px auto;
+        }
+        img {
+            width: 100%;
+            
+        }
+        i {
+            position: absolute;
+            top: 0;
+            left: -20px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: rosybrown;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        二维码
+        <img src="images/xm.png" alt="">
+        <i>✘</i>
+    </div>
+    <script>
+        var i = document.querySelector('i');
+        var div = document.querySelector('div');
+        i.onclick =  function (){
+            div.style.display =  'none'
+        } 
+    </script>
+</body>
+</html>

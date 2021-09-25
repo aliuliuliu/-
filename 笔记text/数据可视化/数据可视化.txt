@@ -1,0 +1,45 @@
+                                                                （常见数据可视化库）
+D3.js 目前Web端评价最高的JavaScript可视化工具库 （入手难）
+ECharts.js 百度出品的一个开源JavaScript数据可视化库
+Highcharts.js国外的前端数据可视化库 非商用免费 被许多大公司所利用
+AntV 蚂蚁金服全新一代数据可视化解决方案
+等等
+Highcharts 和Echarts 就像是Office 和wps 的关系
+Echarts 官网地址：http://www.echartsjs.com/zh/index.html
+                                                           (Echarts 使用五步曲)
+步骤1：下载并引入echarts.js文件                    图表依赖这个js库
+步骤2:准备一个具备大小的DOM容器                生成的图表会放入这个容器内
+步骤3：初始化echarts 实例对象                       实例化echarts对象
+步骤4：指定配置项和数据（option）               根据具体需求修改配置选项
+步骤5：将配置项设置给echarts实例对象           让echarts对象根据修改好的配置生效
+                                                           （相关配置讲解）
+title：标题组件
+tooltip：提示框组件
+legend：图列组件
+toolbox：工具栏
+grid：直角坐标系内绘图网格
+ containLabel: true 
+//当刻度标签溢出的时候 grid区域是否包含坐标轴的刻度标签 如果为true则显示溢出
+//如果left right 等设置为0%刻度标签就溢出了 此时决定是否显示刻度标签
+xAxis:直角坐标系grid中的x轴
+yAxis:直角坐标系grid中的y轴
+color：调色盘颜色列表
+series:系列列表 每个系列通过type决定自己的图表类型（什么类型的图标）
+series:系列列表
+type：类型（什么类型的图标）比如line 是折线 bar柱形等
+name：系列名称 用于tooltip的显示 legend的图例筛选变化
+stack：数据堆叠 如果设置相同值 则会数据堆叠
+数据堆叠：第二个数据值=第一个数据值+第二个数据值
+                第三个数据值 =第二个数据值+第三个数据值...依次叠加
+如果给stack指定不同或者去掉这个属性值则不会发生数据堆叠
+                                                                （边框图片）
+盒子大小不一 但是边框样式相同  此时就需要边框图片来完成
+css3 中新增了borde-image属性 这个新属性允许指定一幅图像作为元素的边框
+边框图片 切图原理 （重要）
+把四个角切出去（九宫格的由来）中间部分可以铺排 拉伸 或者环绕
+边框图片语法（重要）
+属性                                               描述
+border-image-source                   用在边框的图片的路径（那个图片？）
+border-image-slice                       图片边框向内偏移（裁剪的尺寸 一定不加单位 上右下左顺序）
+border-image-width                     图片边框的宽度（需要加单位）（不是边框的宽度是边框图片的宽度）   
+border-image-repeat                    图像边框是否平铺（repeat）铺满（round）拉伸（stretch ） 默认拉伸

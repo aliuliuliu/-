@@ -1,0 +1,205 @@
+                                                                    （视口）
+                                                    （理想视口  ideal  viewport）
+需要手动添加 meta 视口标签通知浏览器操作
+meta 视口标签 的主要目的：布局视口的宽度应该与理想视口的宽度一致 简单理解就是设备有多宽 我们布局的视口就多宽
+                                                             （meta 视口标签）
+ 属相                             解释说明
+ width                          宽度设置的是 viewport宽度 可以设置device-width特殊性
+ inintial-scale               初始缩放话 大于0的数字
+ maximum-scale          最大缩放比  大于0的数字
+ minimum-scale           最小缩放比  小于0 的数字
+ user-scalable               用户是否可以缩放 yes或no （1或0）
+                                                                   （二倍图）！！！！！
+背景缩放  backgrund-size
+ background-size：背景图片宽度  背景图片高度；
+/* 里面的单位可以跟% 先对于父级来说 */
+cover 把背景图像扩展至足够大 以使背景图像完全覆盖背景区域
+contain 把图像图像扩展至最大尺寸以使去宽度 和高度 完全适应内容区域
+                                                             （ css3盒子模型）！！！！
+box-sinzing：border-box；
+有了这句话就让盒子变成css3 盒子模型  padding和border 不会再撑大盒子了
+                                                                （特殊样式）
+ /* 点击高亮我们需要清除清除  设置transparent 完成透明 */
+            -webkit-tap-highlight-color: transparent;
+/* 在移动端浏览器默认的外观在ios上加这个属性才能给按钮和输入框自定义样式 */
+            -webkit-appearance: none;
+ /* 禁用长按页面是的弹出菜单 */
+        img a {
+            -webkit-touch-callout: none;
+        }； 
+                                                                （移动端技术选型）！！！！！
+1.单独制作移动端页面（主流）
+流式布局
+flex弹性布局（强烈推荐）
+less+rem+媒体查询布局
+混合布局
+2.响应式页面兼容移动端（其次）
+媒体查询
+bootstarp
+                                                                        （流式布局）
+（图片和文字对齐）
+vertical-align:middle; 
+（）
+                                                                      (二倍精灵图做法)
+在firework里面把精灵图等比例缩放为原来的一半
+之后根据大小测量坐标
+注意代码里面background-size 也有写 精灵图原来宽度的一半 
+                                                                        （flex 布局）
+原理：
+flex 是flexible Box 的缩写  意为弹性布局 用来为盒装模型提供最大的灵活性 任何一个容器都可以指定 flex布局
+当我们为父盒子设为flex布局以后 子元素的float clear 和vertical-align 属性将时效
+伸缩布局 = 弹性布局 = 伸缩盒布局 = 弹性盒布局 =flex布局  指的都是flex布局 
+                                                                        （ 父项布局）
+                                                                   （flex 布局 父项选项）
+flex-direction ：   设置主轴的方向
+justify-content ： 设置主轴上的子元素排列方式
+flex-wrap :            设置子元素是否换行
+align-content：    设置侧轴上的子元素的排列方式（多行）
+align-items：       设置侧轴上的子元素的排列方式（单行）
+flex-flow：           复合属性，相当于同时设置了 flex-direction和flex-wrap 
+                                                  （flex-direction ：   设置主轴的方向）
+属性值：
+row   默认值从左到右
+row-reverse  从右往左
+column  从上到下
+coiumn-reverse  从下到上
+                                              （justify-content ： 设置主轴上的子元素排）
+justify-content ：属性定义了项目在主轴上的对齐方式
+属性：
+flex-start  默认值 从头部开始 如果主轴是x轴 则从左到右
+flex-end    从尾部开始排列
+center       在主轴居中对齐 （如果主轴是x轴则水平居中）
+space-around   平分剩余空间
+space-between  先两边贴边 再平分剩余空间（重要）
+                                                   (flex-wrap : 设置子元素是否换行)
+flex-wrap  默认值 不换行
+wrap          换行
+                            （align-items：       设置侧轴上的子元素的排列方式（单行））
+conter  居中
+flex-start  默认值从上到下
+flex-end   从下往上
+                                   （align-content：    设置侧轴上的子元素的排列方式（多行））
+必须加 flex-wrap： wrap；换行
+flex-start   默认值在侧轴的头部开始排列
+flex-end  在侧轴的尾部开始排列
+center  在侧轴中间显示
+space-around 子项在侧轴平分剩余空间
+apace-between 子项在侧轴先分布在两头 再平分剩余空间
+stretch  设置子项元素高度平分父元素高度
+总结 ： 就是单行找align-items  多行找 align-content
+                                                               （flex-flow： ）
+ 复合属性，相当于同时设置了 flex-direction和flex-wrap 
+flex-flow： row  wrap；
+                                                                  （子项属性）
+                                                                （子项flex 属性）
+flex： 1；
+align-self  控制子项自己在侧轴上的排列方式
+align-self：flex-end；
+order：-1;
+                                                             （背景线性渐变）
+background： liner-gradient（起始方向，颜色1，颜色2，...）
+background:-webkit-linear-gradient(left,#34c2A9,#6CD559)
+                                                                 （rem基础）
+rem 单位
+rem 的优点就是可以通过修改html里面的文字大小来改变页面中元素的大小可以整体控制
+                                                                  （媒体查询）
+@media 可以针对不同的屏幕尺寸设置不同的样式
+语法规范
+@media mediatype and|not|only(media feature) {
+     CSS-Code；
+}
+用@media 开头注意@符号
+mediatype 媒体类型
+关键字 and not only
+media feature 媒体特性 必须有小括号包含
+                                                            （mediatype 查询类型） 
+mediatype
+值                 解释说明
+all                用于所有设置
+print            用于打印机和打印预览
+screen            用于电脑屏幕，平板电脑，智能手机等
+                                                                    （关键字）
+and  可以将多个媒体特性链接到一起 相当于且的意思
+not  排除某个类型 相当于非 的意思 可以省略
+only 指定某个特定的媒体类型 可以省略
+                                                                    （媒体特性）
+值                   解释说明
+width             定义输出设备中页面可见区域的宽度
+min-width      定义输出设备中页面最小可见区域宽度
+max-width      定义输出设备中页面最大可见区域宽度
+                                                                  (引入资源)（理解）
+当样式比较繁多的时候。我们可以针对不同的媒体使用不同stylesheets （样式表）
+原理，就是直接在link中判断设备尺寸 然后引用不同的scc文件
+                                                                    （Less 介绍）
+Less 是一门css 扩展语言 也成为css 预处理器
+作为css的一种形式的扩展 它并没有减少 css的功能 而是在现有的css语法上 为css加入程序式语言的特性
+Less 是一门css预处理语言  它扩展了css的动态特性
+                                                                    （Less 使用）
+我首先新建一个后缀名为less的文件 在这个less文件里面书写less语句
+Less  变量
+Less  编译
+Less  嵌套
+Less  运算
+                                                                     （Less变量）
+@变量名：值；
+1.变量命名规范
+ 必须有@为前缀
+ 不能包含特殊字符
+ 不能以数字开头
+ 大小写敏感
+                                                                        （Less 编译）
+使用插件  保存 就会生成 css文件
+                                                                         （Less嵌套）
+//1.less嵌套 子元素的样式直接写到父元素里面就好了
+ // 2.如果有伪类、交际选择器、伪元素选择器 我们内层选择器的前面需要加&
+                                                                         （Less 运算）
+任何数字 颜色或者变量都可以参与运算 就是less提供了加+ 减- 乘 * 除 /
+//1.我们运算符左右两侧必须敲一个空格隔开
+// 2.两个数参与运算 如果只有一个数有单位 则最后的结果就以这个单位为准
+// 3.两个数参与云素昂  如果2个数都有单位 而且不一样单位 最后的结果以第一个为准
+                                                                       (rem 适配方案)
+技术方案1
+less
+媒体查询
+rem
+技术方案2 （推荐）
+flexible.js
+rem
+总结：
+1.两种方案都存在
+2.方案2 更简单 现阶段大家无需了解里面的js代码
+                                                                （ rem 实际开发适配方案1）
+rem + 媒体查询 +less技术
+设备                    常见宽度
+iphone4.5         640px
+iphone678        750px
+android            常见320px  360px  375px  384px 400px 414px 500px 720px
+大部分4.7~5寸的安卓设备为720px
+一般情况 我们以一套或两套效果图适应大部分的屏幕 放弃极端或对其优雅降级 牺牲一些效果现在基本以750为准
+                                                                          （响应式布局）
+平时我们的响应式尺寸划分
+ 超小屏幕 （手机  小于768px）：设置宽度为 100%
+ 小屏幕 （平板 大于等于 768px）：设置宽度为750px
+ 中等屏幕 （桌面显示器  大于等于992px）：宽度设置为870px
+ 大屏幕 （ 大桌面显示器  大于等于1200px） ：宽度设置回1170px
+                                                          （Bootstrap 前端开发框架）
+Bootstrap 使用四步曲 1.创建文件夹结构 2.创建html骨架结构 3.引入相关样式文件 4.书写内容
+                                                                    （类前缀）
+ 超小屏幕 （手机  小于768px）：设置宽度为 100%    .col-xs-                    
+ 小屏幕 （平板 大于等于 768px）：设置宽度为750px   .col-sm-
+ 中等屏幕 （桌面显示器  大于等于992px）：宽度设置为870px  .col-md-
+ 大屏幕 （ 大桌面显示器  大于等于1200px） ：宽度设置回1170px  .col-lg-
+                                                                       ( 列嵌套)
+栅格系统内置的栅格系统将内容再次嵌套  简单理解就是一个内列再分成若干份小列 我们可以通过添加一个新的.row元素和一系列.col-sm-*元素到已经存在的.col-sm- 元素内
+我们列嵌套最好加一1行.row 这样可以取消父元素 的padding值而且高度自动和父级一样高
+                                                                         （列偏移）
+使用.col-md-offset-*类可以将列向右侧偏移  这些类实际是通过*选择器为当前元素增加了左侧的边距 margin
+                                                                           （列排序）
+通过使用 .col-md-push-* 和 col-md-pull-*类 就可以很容易的改变列colimn 的顺序	
+                                                                        （响应式工具）
+类名                     超小屏        小屏             中屏                   大屏
+.hidden-xs           隐藏           可见             可见                   可见
+.hidden-sm          可见           隐藏             可见                   可见
+.hiddden-md        可见          可见              隐藏                   可见 
+.hidden-lg             可见          可见              可见                   隐藏
+与之相反的 是 visible-xs    visible-sm  visible-md  visible-lg  是显示某个页面内容

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .w {
+            width: 1000px;
+            margin: 100px auto;
+        }
+
+        .one ul li {
+            height: 40px;
+            padding: 0 20px;
+            float: left;
+        }
+
+        .one {
+            width: 800px;
+            height: 40px;
+            background-color: rgb(216, 216, 216);
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .one1 {
+            background-color: rgb(211, 23, 9);
+            color: rgb(216, 216, 216)
+        }
+
+        .two1 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w">
+        <div class="one">
+            <ul>
+                <li class="one1">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（5000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="two">
+            <div class="two1" style="display:block">1111111</div>
+            <div class="two1">222222</div>
+            <div class="two1">333333333</div>
+            <div class="two1">4444444444</div>
+            <div class="two1">55555555</div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            //1.点击上部的li 当前li 添加one1类 其余兄弟移除类
+            $(".one li ").click(function(){
+                // 链式编程操作
+                $(this).addClass("one1").siblings().removeClass("one1");
+                //点击的同时 获取索引号
+                var index =$(this).index();
+                console.log(index);
+                // 让下部里面相应索引号的two1 显示 其他兄弟模块隐藏
+                $(".two .two1").eq(index).show().siblings().hide();
+            })
+        
+
+        })
+    </script>
+</body>
+
+</html>

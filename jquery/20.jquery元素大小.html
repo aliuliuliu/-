@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function () {
+            //1.width() / height() 获取匹配元素宽度和高度值 只算width / height
+            console.log($("div").width());
+            console.log($("div").height());
+            //2.innerWidth() / innerHeight() 获取匹配元素宽度和高度值 包含padding
+            console.log($("div").innerWidth());
+            console.log($("div").innerHeight());
+            //3.outerWidth() / outerHight() 获取匹配元素宽度和高度值 包含padding border
+            console.log($("div").outerHeight());
+            console.log($("div").outerWidth());
+            //4.outerWidth(true) / outerHight(true) 获取匹配元素宽度和高度值 包含padding border margin
+            console.log($("div").outerHeight(true));
+            console.log($("div").outerWidth(true));
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!-- 希望Vue 能控制下面的这个div 帮我们把数据填充到 div 内部· -->
+    <div id="app">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <th>索引</th>
+                <th>id</th>
+                <th>姓名</th>
+            </thead>
+            <tbody>
+                <!-- 官方建议 只要用到了 v-for 指令 那么一定要绑定一个 :key 属性 -->
+                <!-- 而且 尽量id 作为 key 的值 -->
+                <!-- 官方对key的值是有要求的  字符串或数字类型 -->
+                <!-- key 的值是千万不能重复的 否则会终端报错 Duplicate keys detectde -->
+                <tr v-for="(item,index) in list" :key="item.id">
+                    <td>{{ index }}</td>
+                    <td>{{ item.id}}</td>
+                    <td>{{ item.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- 1.导入vue 的库文件  在 window 全局就有了Vue 这个构造函数-->
+    <script src="lib/vue.js"></script>
+    <!-- 2.创建vue的实例对象 -->
+    <script>
+        //创建 vue的实例对象
+        const vm = new Vue({
+            //el 属性是固定的写法 表示当前 vm 实例要控制页面上的哪一个区域 接收的值是一个选择器
+            el: '#app',
+            //data 对象就是要填充的数据
+            data: {
+                list: [{
+                        id: 1,
+                        name: '张三'
+                    },
+                    {
+                        id: 2,
+                        name: '李四'
+                    },
+                    {
+                        id: 3,
+                        name: '王五'
+                    },
+                    {
+                        id: 4,
+                        name: '刘六'
+                    },
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

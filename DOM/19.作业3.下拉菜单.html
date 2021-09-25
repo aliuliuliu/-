@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .w {
+            width: 1200px;
+            margin: auto;
+        }
+        .w ul li {
+            float: left;
+            position: relative;
+        }
+        .w ul li a {
+            display: block;
+            padding: 0 20px;
+            height: 35px;
+            background-color: #ccc;
+            line-height: 35px;
+            text-align: center;
+            color: #000;
+        }
+        .w ul li a:hover{
+            background-color: #999;
+            color: seashell;
+        }
+       
+        .w ul li  ul  {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            float: none;
+            display: none;
+        }
+        .w ul li  ul li a {
+            display: block;
+            padding: 0 20px;
+            height: 35px;
+            background-color: rgb(236, 236, 236);
+            line-height: 35px;
+            text-align: center;
+            color: #000;
+        }
+        .w ul li:hover ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="w">
+    <ul>
+        <li><a href="">菜单一</a>
+        <ul>
+            <li><a href="#">子菜单</a></li>
+            <li><a href="#">子菜单</a></li>
+            <li><a href="#">子菜单</a></li>
+        </ul>
+        </li>
+        <li><a href="">菜</a></li>
+        <li><a href="">菜单三</a></li>
+    </ul>
+    </div>
+</body>
+</html>

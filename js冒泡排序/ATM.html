@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var age = prompt('请输入您要的操作：'+'\n'+'1.存钱'+'\n'+'2.取钱'+'\n'+'3.显示余额'+'\n'+'4.退出');
+        var sum = 100 ;
+        switch (age) {
+            case '1' :
+                var age1 =prompt('请输入要存入金额');
+                sum += parseFloat(age1) ;
+                alert ('卡上余额'+sum+'元');
+                break ;
+            case '2' :
+                var age2 = prompt('请输入要取入金额');
+                sum -= parseFloat(age2) ;
+                alert ('卡上余额'+sum+'元');
+                break ;
+            case '3' :
+                alert ('卡上余额'+sum+'元');
+                break ;
+            case '4' :
+                alert ('谢谢使用');
+                break ;
+        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

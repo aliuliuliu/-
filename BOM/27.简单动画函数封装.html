@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn500">夏雨荷走500</button>
+    <button class="btn800">夏雨荷走800</button>
+    <div></div>
+    <span></span>
+    <script>
+        //动画原理
+        // 核心原理： 通过定时器 setlnterval（） 不断移动盒子位置
+        // 实现步骤：
+        // 1. 获得盒子当前位置
+        // 2. 让盒子在当前位置加1个移动距离
+        // 3. 利用定时器不断重复这个操作
+        // 4. 加一个结束定时器的条件
+        // 5.注意元素需要添加定位 才能使用 element.style.left
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        //简单动画 函数封装 obj 目标对象 target 目标位置
+        // var obj = {};
+        // obj.name :'andy';
+        // 给不同的元素 指定了不同的定时器
+        //1.让盒子每次移动的距离慢慢变下，速度就会慢慢落下来
+        //2.核心算法 :(目标值 - 现在的位置) / 10 作为每次移动距离的步长
+        //3.停止 的条件是 ： 让当前盒子位置等于目标位置就停止定时器
+        function animate(obj, target, callback) {
+            // callback = function(){}  调用的时候 callback
+            // 当我们不断的点击按钮 这个元素的速度会越来越快 因为我们开启了太多的定时器
+            // 节解决方案 让我们元素只有一个定时器执行
+            // 先清除以前的定时器  只保留当前的一个定时器执行
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function () {
+                //步长值写到定时器的里面
+                //把我们步长值改为整数 不要出现小数的问题
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    //停止动画
+                    clearInterval(obj.timer);
+                    if (callback) {
+                        // 调用函数
+                        callback();
+                    }
+                }
+                // 把每次加1这个步长值改为一个慢慢变小的值 步长公式:(目标值 - 现在的位置) / 10
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15);
+        }
+        animate(div, 500);
+        btn500.addEventListener('click', function () {
+            animate(span, 500)
+        })
+        btn800.addEventListener('click', function () {
+            animate(span, 800, function () {
+                alert('nihaoa')
+            })
+        })
+        //匀速动画 就是 盒子是当前的位置 + 固定的值  10
+        // 幻速动画就是 盒子当前的位置 + 变化的值（目标值 - 现在的位置）/ 10 
+    </script>
+</body>
+
+</html>

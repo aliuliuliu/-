@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .current {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <ul>
+        <li></li>
+    </ul>
+    <ol>
+
+    </ol>
+    <script>
+        $(function(){
+            //1.单个注册事件
+            // $("div").click(function(){
+            //     $("div").css("background","red")
+            // })
+            // $("div").mouseenter(function(){
+            //     $("div").css("background","purple")
+            // })
+            //2.事件处理on
+            // $("div").on({
+            //     mouseenter:function(){
+            //         $(this).css("background","blue")
+            //     },
+            //     click:function(){
+            //         $(this).css("background","red")
+            //     },
+            //     mouseout:function(){
+            //         $(this).css("background","skyblue")
+            //     }
+            // })
+            $("div").on("mouseenter mouseout",function(){
+                $(this).toggleClass("current")
+            })
+            //(2)on 可以实现事件委托（委派）
+            $("ul li ").click();
+            $("ul").on("click","li",function(){
+                alert(11)
+            })
+            //click 是绑定在 ul 身上的 但是 触发的对象是ul 里面的li
+            //(3)on可以给动态创建的元素绑定事件
+            // $("ol li").click(function(){
+            //     alert(11)
+            // })
+            $("ol").on("click","li",function(){
+                alert(11)
+            })
+            var li = $("<li>我是后来的小li</li>")
+            $("ol").append(li)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(images/oppo.png) no-repeat;
+        }
+        .baidu {
+            width: 1000px;
+            margin: 100px auto;
+        }
+        li {
+            width: 180px;
+            height: 100px;
+            list-style: none;
+            float: left;
+            margin-left: 5px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul class="baidu">
+        <li><img src="images/oppo.png" alt=""></li>
+        <li><img src="images/xm.png" alt=""></li>
+        <li><img src="images/oppo.png" alt=""></li>
+        <li><img src="images/xm.png" alt=""></li>
+    </ul>
+    <script>
+        //1.获取元素
+        var imgs = document.querySelector('.baidu').querySelectorAll('img')
+        // 2.循环时间
+        for(var i = 0; i < imgs.length; i++){
+            imgs[i].onclick = function(){
+            document.body.style.backgroundImage = 'url('+this.src+')'
+            }
+        }
+    </script>
+</body>
+</html>

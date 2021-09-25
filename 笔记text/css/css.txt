@@ -1,0 +1,389 @@
+﻿                                （calss=“  1”  .1 ） ( id="1"    #1)  (  div   div)
+                                                            （字体）
+color          颜色
+font-size    字体
+background-color     背景颜色
+font-family： 'Times New Roman',Times,serif;     字体样式
+font-weight   字体粗细  bold 粗体   不用跟px 单位   700  粗体  400  细体    ！！！！
+font-style       字体样式   （italic  斜体 ） （normal  斜体变正）
+font:italic 700 16px 'Microsoft yahei';    （复合属性：简写的方式 节约代码  不可以颠倒顺序
+必须 保留font-size 和font-family）
+                                                             （文本）
+color   颜色  （预定义的颜色值  red，green，blue）（十六进制  #cc00ff #ff6600 ）（RGB 代码   rgb(255,0,0)）
+text-align   文本对齐   conter 居中 right 右对齐 left 左对齐
+text-decoration   装饰文本   underline 下划线  line-thougn 穿过线  
+text-decoration： none ；  a 链接取消下划线     tdn  快捷键
+text-indent：20px；     首行缩进  text-indent：2em；  em一个文字大小
+line-height ：20px；    行间距                                                                      ！！！！
+                                                           （css样式表）
+                                                            (行内样式表)
+<div style="color: red ;  font-size: 12px; ">行内样式表</div>        行内样式表                                                                               (外部样式表)
+<link rel="stylesheet" href="文件名.css">  
+
+                                                      （快捷键）
+                                                     （html 快捷键）
+div>p   ul>li       <div><p></p></div>     <ul><li></li></ul>  包 含级
+div+P             <div></div>  <p></p>          并列级
+ div*3             <div></div> <div></div> <div></div>    倍数级
+. one               <div class="one"> </div>   class选择器 
+#one              <div  id="one">   </div>     id 选择器 
+. one $*3        <div class="one1"> </div>  <div class="one2"> </div>  <div class="one3"> </div>      顺序倍数级 
+ div{内容}     <div>内容</div>   内容快捷键
+div{$}*3     <div>1</div> <div>2</div><div>3</div>
+                                                      （css快捷键）
+tdn           a 链接取消下划线
+w200          width: 500px;
+h200          height: 100px;
+tac              text-align: center;    行内元素居中。
+                                                      （ 选择器） 
+                                                     （后代选择器）
+ul  li   {声明样式}       ul  和 li  一定要空格 隔开   
+                                                  （ 子元素选择器）
+ul>li    {}           > 大于号
+                                                    （并集选择·）
+ul ，p ，.one ul li {}   各个标签 用逗号隔开    
+                                                  （ 伪类选择器）
+a:link {}          把没有点击过的（访问过的）链接选出来
+a:visited  {}    选择访问过的链接 
+a:hover    {}      选择鼠标经过的那个链接
+a:active   {}      选择的是我们鼠标正在按下还没有弹起鼠标的那个链接  按照顺序！！！
+                                             （focus 伪类选择器）
+input：focus    焦点就是光标
+                                          （css的元素显示元素）
+                                             （ 块元素 ）
+<div><h1> <p>
+比如<div>自己占一行  <span>  一行可以放多个
+块元素  1.比较霸道 独霸一行 2.宽度和高度 外边框和内边框都可以控制
+3.宽度默认是容器（父级宽度）的100%  4.是一个容器及盒子，里面可以放行内或者块级元素
+                                              （ 行内元素）
+<a> <b> <strong> <i> <s><u>
+1.相邻行内元素在一行上  一行可以显示多个
+2.高 和宽直接设置是无效的
+3.默认宽度就是他本身的宽度
+4.行内元素只能容纳文本或其他行内元素
+5.链接里面不能放链接
+                                                （行内块元素）
+<img>  <input>   <td>
+1.相邻行内元素在一行上  一行可以显示多个
+2.高 和宽直接设置是有效的
+3.宽度和高度 外边框和内边框都可以控制
+                                             （元素显示模式转换）
+转换为块元素：display：block；
+转换为行内元素：dispiay：inline；
+转换为行内块元素  dispiay:inline-block;
+                                                         （背景颜色）
+background-color   背景颜色  transparent 透明色
+                                                         （背景图片）
+background-image      url（） 背景图片                                ！！！！
+                                                          （背景平铺）
+background-repeat       on-repeat  不平铺   repeat-x    repeat-y               ！！！！
+页面元素既可以添加背景颜色也可以添加背景图片 只不过 背景图片会压住背景颜色
+                                                          （背景图片位置）
+background-position： x  y； top，center ，bottom，left.rigth  上中下       ！！！！左右  
+background-position：20px 50px；  可以移动精确单位  x轴 20px y轴              ！！！！50px  顺序不能换
+                                                           （背景图像固定）
+background-attachment ：scroll（滚动）  或 fixed  （固定）  制作视差滚动的效果
+                                                             （背景复合写法）
+background:url(p1-bg.jpg) fixed no-repeat center 100px;  
+                                                          （背景颜色半透明）
+background：rgba(0, 0, 0, 0.5);   alpha透明度 取值范围（0-1）
+                                                            （ css 三大特性）
+                                                                 （层叠性）
+                                                               (相同选择器)
+样式冲突 遵循的原则是最近原则  哪个样式里结构近 就执行哪个样式
+样式不冲突 不会重叠
+                                                            （复合选择器）
+                                                                （继承性）
+龙生龙，生凤， 老鼠生的孩子会打洞 ！ text-  font- line-  color  可以继承
+                                                                (行高的继承)
+body { font：12px/1.5 Microsoft YaHei;}
+行高可以跟单位也可以不跟单位
+如果子元素没有设置高度，则会继承父元素的行高为1.5
+此时子元素的行高是：当前子元素的文字大小*1.5
+body 行高 1.5这样写法最大的优势就是里面子元素可以跟据自己文字大小自动调整行高
+                                                                  （优先级）
+选择器相同 则执行层叠性
+选择器不同 则根据选择器权重执行
+继承 或则*< 元素选择器 <类选择器,伪类选择器 <ID选择器 <行内选择器 style=""<!ipportant 最大
+继承的权重是 0  最低
+复合选择会有权重叠加问题   权重永远不进位
+                                                                 （盒子模型）
+1.先准备好相关的网页元素，网页元素基本都是盒子BOX
+2.利用css设置好盒子样式，然后摆放到相应位置 （核心本质）
+3.往盒子里面装内容。
+                                                                 （边框）
+border  边框    border-width 边框宽度   border-style  边框样式  solid 实线    ！！！！ dashed  虚线 dotted  点线    ）
+border-radius: 50%;       边角变圆
+                                                              （细线边框）
+border-collapse：collapse   细线边框 相邻的表框合并在一起！）   ！！！！
+                                                           （padding 内边距）
+padding-top ，left ，rigth， bottom  上  右 左 下  （复合型 写法   上  右 下 左）（一个值上下左右都一样））                                                                                                                                                                                                              （margin外边距）
+margin-left ， right ，top ，bottom  (左右上下)   (margin：10px；上下左右都10px   )   (margin：20px 10px；上下20px 左右10px )
+ (margin：20px 10px；上下20px 左右10px  ) ( margin：20px 10px  30px;    上20px 左右10px 下30px )和内边距 格式相同；
+ margin ：0 auto； 盒子居中
+                                                           （ content 盒子内容）
+                                                            ( 取消复合盒子 塌陷)
+overflow : hidden                                                                              ！！！！
+                                                                (清除内外边框)
+*(padding :0: margin :0;}
+                                                             ( 无序列表 去除小圆点)
+li 【 list-style : none :)                                                                      ！！！！
+                                                                    (圆角边)(重点)
+border-radius:100px;顺序是左上右上右下左下                                    ！！！！
+                                                                (盒子阴影)(重点)
+box-shadow : 10px 10px 10px 10px rgba (0 ,0 ,0,0.3)                    ！！！！
+h-shadow 必须 水平阴影的位置 允许负值 v-shadow b 必须 直阴影的位置 允许负值
+blur 可选模糊距离spread 可选阴影的尺寸color颜色 inset 可选 将外部阴影*(outset)改为内部阴影
+rgba ( 0 , 0 , 0 , 0.3) 透明度
+                                                                       (文字阴影
+text-shadow : 10px 10px 10px 10px rgba (0 , 0 , 0,0.3)
+h-shadow 必须 水平阴影的位置 允许负值 v-shadow b 必须 垂直阴影的位置 允许负值
+blur 可选 模糊距离 spread 可选 阴影的尺寸 color 颜色 inset 可选 将外部阴影* (outset)改为内部阴影
+rgba ( 0 , 0 , 0 , 0.3) 透明度
+                                                                 （float 浮动）      ！！！！
+float ： none left  rigth；
+网页布局第一准则：多个块元素纵向排列找标准流，多个块元素横向排列找浮动。
+网页布局第二准则：先设置盒子大小 再设置盒子位置
+
+选择器{  none left  rigth}
+                                                                    （浮动特性）
+1.浮动元素会脱离标准流（脱流）
+2.浮动的元素会一行内显示并且元素顶部对齐
+3.浮动的元素具有行内元素的特性
+                                                                           重要
+1.脱离标准普通流的控制（浮） 移动到指定位置（动）（俗称 脱标）
+2.loi浮动的盒子不在保留原先的位置
+                                                                  （清除浮动）
+清除浮动造成的影响
+ 1.（额外表前法       隔墙法 就是在最后一个浮动的子元素后面添加一个额外标案添加清除浮动样式
+ 选择器{  clear ：both}）
+2. 在父元素添加  overflow： hidden
+3.伪元素 
+.clearfix：after{
+content："";
+display : block;
+heigth: 0;
+clear:both；
+visibility：hiddth；}
+. clearfix {  /*IE6,7 专有 */ 
+ *zoom：1； }
+4. 双伪元素
+.clearfix：before，.clearfix：after{
+content："";
+display : table;}
+.clearfix：after{
+clear:both；}
+.clearfix {
+*zoom：1；}
+                                                                       （头部制作）
+实际开发中，我们不会直接用链接a 而是用li包含链接（li+a）的做法、 ！！！！
+                                                               （定位）
+                                                            （子绝父相）
+position: relative;         相对定位
+position: absolute;      绝对定位 
+position: fixed;            固定定位
+固定点位 算法  
+position: fixed;   
+rigth：50px%；
+margin：版心的一半；
+                                                         （粘性定位）
+position: sticky;
+                                                       （定位叠放次序）  
+z-index：1；   数值越大 越在上面
+数字后面不加单位
+只有定位的盒子才有z-index属性
+
+                                                          （网页布局总结）     ！！！！
+1.标准流
+可以让盒子上下排列或者左右排列，垂直的块级盒子显示就用标准流布局。
+2. 浮动
+可以让多个块级元素一行显示或者左右对齐盒子，多个块级盒子水平显示就用浮动布局。
+3.定位
+定位最大的特点是有层叠的概念，就是可以让多个盒子前后叠压显示，如果元素自由在某个盒子移动就用定位布局。
+                                                      （元素的显示与隐藏）
+1.display  显示隐藏   ！！！
+display ：none；  不显示元素 （位置不保留）  display ：bolck； 显示元素
+2. visibility  显示隐藏
+visibility ：hidden；  不显示元素 （位置保留） display ：visible；显示元素
+3. overflow  溢出显示隐藏
+overfiow ：hidden； 溢出部分不显示元素  overfiow ： visible；溢出部分显示元素
+overfiow ：scroll ；  出现滚动条        overfiow ：auto；有溢出部分 才出现滚动条
+                                                                  （精灵图）
+background-position： x  y；  一般 x y 都为负值
+                                                                （字体图标）  
+iconfont  字体图标可以为前端工程师提供一种方便高效的图标使用方式、展示的是图标 。本质属于字体
+字体图标的下载网站
+1.icomoon 字库 http://icomoom.io （国外）
+2.阿里 iconfont字库 http://www.iconfont.cn/  (国内)
+
+网站图标
+foot 加载到根目录
+格式前复制一行代码
+span { font-family：icomoon}
+                                                                           (css 三角)
+选择器 {
+        height: 0;
+        width: 0;
+        line-heigth:  0 ;
+        font-size :  0 ;
+        border: 10px solid transparent ;
+        border-bottom-color : pink ;
+}
+                                                                         (css 用户界面样式)
+鼠标样式  cursor
+cursor：default  小白
+cursor： pointer  小手
+cursor ：move  移动样式
+cursor ：text  文字
+cursor ：not-allowed   禁止 图标
+                                                                            （轮廓线 outline）
+    
+outline：0； 或者 outline：none；  取消轮廓
+                                                                     （防止拖拽文本域   resize）   
+.textarea  { resize: none}、
+                                                                         （vertical-align）（解决图片底部有空白缝隙问题）
+vertical-align：baseline （基线对齐） |   top (顶端对齐) |  middle （中线对齐） |  bottom  （底线对齐）
+                                                                            （溢出的文字用....）
+                         （单行文本溢出）满足三个条件
+1.white-space：nowrap； （默认文本不自动换行）
+2.overflow：hidden；  （超出部分隐藏）
+3. text-overflow:ellipsis ( 超出部分省略号代替超出的部分)
+                     （多行文本溢出）
+                                              （margin  负值运用）
+ul li {
+            float: left;
+            margin-left: -1px;
+            width: 150px;
+            height: 200px;
+            border: 1px solid pink;
+            list-style: none;
+        }
+        ul li:hover{
+            border: 1px solid rgb(223, 48, 77);
+            position: relative;   （ 相对定位）
+        }    
+1.  如果盒子没有定位 则鼠标经过添加相对定位即可
+2.  如果盒子都有定位   添加 z-index  提升优先级
+                                                       （文字围绕效果）
+大盒子里面的图片盒子向左浮动 文字不浮动  就会显示文字环绕图片
+                                                        （css 三角强化）
+.box {
+            width: 0;
+            height: 0;
+            border-color：transparent red  transparent transparent； 
+            border-style: solid;
+            border- width： 100px 50px  0 0；
+        }
+ line-height:   行高   font-weight： 700      加粗
+                                                                 （css3）
+标准选择器
+div[class="box"]     属性值等于 box
+div[class^="box"]     属性值以box 开头
+div[class$="box"]     属性值以box 结尾
+div[class*="box"]     属性值含有box
+新增伪类选择器
+儿子相同
+ul li：first-child         匹配父元素中的第一个字元素li
+ul li：last-child         匹配父元素中的最后一个字元素li
+ul li：nth-child（n）         匹配父元素中的第n字元素li
+n  可以是数字  可以是关键词 even 偶数  odd  奇数  可以是  3n 三的倍数  5n  五的倍数
+ 2n+1奇数  2n 偶数   n+5从第五个开始   -n+5  从零到五结束或者是前五个
+儿子不同
+div span :first-of-type       第一个span
+div span :last-of-type       最后一个span
+div span :nth-of-type（n）       最后n个span
+                                            （伪元素选择器）
+div::before {   content:"我";      }   内容前面插入一个盒子
+div::after {    content:"小猪佩奇";   }    内容后面插入一个盒子
+befre  after 是个行内元素     权重比较低
+                                                （ 2D转换）
+盒子移动位置方法 ：定位 盒子的外边距  2d 转换移动
+transform    简单理解变形
+                                      （移动:translate  ）
+ transform: translate (x,y);  transform: translatex(100px); 
+ transform: translatey(100px);    （最大的优点不会影响其他元素的位置）
+（可以是% 如果里面的参数是%移动的距离是 盒子自身的宽度或者高度来对比的)
+这里的50% 就是50px 因为盒子的宽度是100px
+transform: translate(-50%,-50%);
+translate   对行内元素是无效的
+                                          （旋转：rotate）
+transform:rotate（度数）  rotate（45deg）
+trabsform-origin ：top  bottom  left  rigth  已上下左右中心轴旋转
+
+开始..》
+                                       （缩放：scale）
+transform：scale （x,y）   里面是数字不跟单位  就是倍数的意思 1就是1倍 2就2倍	scale优势： 不会影响其他盒子 而且 可以设置缩放的中心点
+                                                  （过渡）
+ transition: all 3s;  谁作过渡给谁添加
+                                              （2D  转换综合写法）
+transform：translate（）rotate（）scale（） 空格 隔开 把 位移放在最前面
+                                                      （css动画）  
+                                                   （animation动画）
+相对 过渡，动画可以实现更多变化，更多控制，连续自动播放等效果
+1.先定义动画
+2.在使用（调用）动画
+1.用keyframes 定义动画（类似定义选择器）
+from  和 to  等价于0%100%
+ @keyframes move {
+           0% {
+                transform: translate(0px,0px) rotate(180deg) scale(1.3);
+            }
+            25% {
+                transform: translate(1000px,0px)rotate(180deg) scale(1.3);
+            }
+            50% {
+                transform: translate(1000px,500px)rotate(180deg) scale(1.3);
+            }
+            75% {
+                transform: translate(0px,500px)rotate(180deg) scale(1.3);
+            }
+            100% {
+                transform: translate(0px,0px)rotate(180deg) scale(1.3);
+            }
+        }
+2. 调用动画                                  (动画的常见属性)
+animation-name: move;   调用动画名称  move
+animation-duration: 2s;   动画过程所用时间
+animation-timing-function：   动画的曲线  默认是 ease 低-高-低 linear 匀速  ease-in  低速开始 ease-out  以低速结束  ease-in-out  以低速开始和结束   steps（） 指定时间函数中的间隔数量 （步长）
+animation-delay  ：                 动画何时开始  默认0
+animation-iteration-count ：   播放次数count 默认是1 还有infinite无限次
+animation-direction ：normal    默认  normal   alternate   反方向
+animation-fill-mode :  动画结束后 保持forwards  回到起始 backwards
+animation-play-state： 默认 running  还有鼠标经过停止 paused
+white-space: nowrap;  文字强制一行内显示
+                                                             （三维坐标系）
+x轴：水平向右  注意：x右边是正直  左边是负值
+y轴：垂直向下  注意：y下面是正直  上面是负值
+z轴：垂直 屏幕 注意：往外是正直 往里面是负值
+                                          （translate3d       3D 移动   ）
+z轴 特别重要 一般用多少px来显示
+transform：translate3d（x,y,z）; xyz  不能省略如果没有就写0
+                                                      （perspective  透视）
+perspective：100px；
+1.透视写到被观察元素的父盒子上面
+d：就是视距，视距就是一个距离人的眼睛到屏幕的距离
+z：就是z轴，物体距离屏幕的距离，z轴越大（正直）我们看到的物体就越大
+                                         （rotate3d  3D旋转）
+transform:rotat3d (1,0.0 45deg);  沿着x轴旋转
+                                                    （transfrom-style  3D呈现）
+transfrom-style:preserve-3d;  子元素开启立体空间
+代码写给父级，单是影响的是子盒子
+这个属性很重要，后面必用
+                                       （网站TDK 三大标签SEO优化）
+1.title 网站标题
+title  具有不可替代性，是我们内页的第一个重要标签，是搜索引擎了解网页的对网页主题归属的最佳判断点。
+建议 网站名（产品名）-网站的介绍 （尽量不要超过30个汉字）
+2.description 网站说明
+简要说明我们网站主要是做什么的
+3.keywords 关键字
+keywords 是页面关键字，是搜索引擎的关注点之一
+                                           
+ 
+
+                                                     
+
+
+
+
+
+

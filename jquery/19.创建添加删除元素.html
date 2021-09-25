@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>原先的li</li>
+    </ul>
+    <div class="test">我是原先的div</div>
+    <script>
+        $(function () {
+            //1.创建元素
+            var li = $("<li>我是后来小li</li>")
+            //2.添加元素
+            //(1)内部添加
+            // $("ul").append(li); //把内容放入匹配元素内部最后面 类似于原生appendChild
+            $("ul").prepend(li);
+            //(2)外部添加
+            var div = $("<div>我是后妈生的</div>")
+            var div1 = $("<div>我是后妈生的</div>")
+            $(".test").after(div)
+            $(".test").before(div1)
+            //3.删除元素 
+            // $("ul").remove()  //删除匹配元素（本身） 自爆
+            // $("ul").empty() //删除匹配的元素集合中所有的子节点  儿子自爆
+            // $("ul").html("") //清空匹配的元素内容  儿子自爆
+        })
+    </script>
+</body>
+
+</html>

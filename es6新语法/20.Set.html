@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //声明一个 set
+        let s = new Set();
+        let s2 = new Set(['大事儿','小事儿','坏事儿']);
+        console.log(s2, typeof s);
+        // 元素个数
+        // console.log(s2.size);
+        //添加新的元素
+        s2.add('喜事儿')
+        console.log(s2);
+        //删除元素
+        s2.delete('坏事儿')
+        console.log(s2);
+        //检测
+        console.log(s2.has('大事儿'));
+        for(var v of s2){
+            console.log(v);
+        }
+    </script>
+</body>
+
+</html>

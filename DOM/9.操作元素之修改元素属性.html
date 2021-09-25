@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button id="one">oppo</button>
+    <button id="two">xiaomi</button>
+    <img src="images/oppo.png" alt="" title="oppo">
+    <script>
+        //修改元素属性 src
+        //1.获取元素
+        var oppo = document.getElementById('one');
+        var xiaomi = document.getElementById('two');
+        var img = document.querySelector('img')
+        //2.注册事件  处理程序
+        xiaomi.onclick = function(){
+            img.src = 'images/xm.png'
+            img.title= '小米'
+        }
+        oppo.onclick = function(){
+            img.src = 'images/oppo.png'
+            img.title= 'oppo'
+        }
+    </script>
+</body>
+
+</html>

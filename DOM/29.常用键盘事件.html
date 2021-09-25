@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. keyup 某个键盘按键松开时触发
+        document.onkeyup = function(){
+            console.log('我弹起了');
+        }
+        document.addEventListener('keyup',function(){
+            console.log('我弹起了');
+        })
+        // 2.keydown 某个键盘按键被按下时触发
+        document.onkeydown = function(){
+            console.log('我弹起了');
+        }
+        document.addEventListener('keydown',function(){
+            console.log('我弹起了');
+        })
+        // 3.keypress 某个键盘按键被按下时触发 但是它不识别功能键 ctrl shift
+        document.onkeypress = function(){
+            console.log('我弹起了');
+        }
+        document.addEventListener('keypress',function(){
+            console.log('我弹起了');
+        })
+        //4.三个事件的执行顺序  先 down press up
+    </script>
+</body>
+
+</html>

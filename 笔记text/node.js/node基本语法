@@ -1,0 +1,1080 @@
+##  day1
+
+### node.js  是什么？
+
+- node.js不是一门语言
+
+- node.js不是库、不是框架、、
+
+- node.js是一个JavaScript运行时环境
+
+- 简单点来讲就是 node.js 可以解析和执行JavaScript代码
+
+- 以前只有浏览器可以解析执行JavaScript代码
+
+- 也就是说现在的JavaScript可以完全脱离浏览器来运行 一切归功于：node.js
+
+  - 浏览器中JavaScript
+  - EcmaScript
+  - 基本语法
+    - if 
+    - var 
+    - function
+    - object
+    - Array
+    - BOM
+    - DOM
+
+- node.js中的JavaScript
+
+- 没有BOM 、DOM
+
+- EcmScript
+
+- 在node这个JavaScript执行环境中为JavaScript提供了一些服务器级别的操作API
+
+  ​        例如文本读写
+
+  ​        网络服务的构建
+
+  ​        网络通信
+
+  ​        http服务器、
+
+  - node.js 特性
+
+  - event-driven 事件驱动
+
+
+  - non-biockqI/O非阻塞IO模型（异步）
+
+
+  - 轻量和高效
+
+
+  - 随着课程慢慢的学习你会明白什么事驱动 非阻塞IO模型
+
+- .node.js-npm
+  - npm是世界上最大的开源生态系统
+  - 绝大多数JavaScript相关的包都存放在了npm上 这样做的目的是为了让开发人员更方便的去下载使用我
+
+- 构建与chrome 的v8 引擎之上
+  - 代码只是具有特定格式的字符串而已
+  - 引擎可以认识他  引擎可以帮你去解析和执行
+
+### Node中的JavaScript
+
+- EcmaScript
+
+  - 没有DOM 、BOM
+
+- 核心模块
+
+- 第三方模块
+
+- 用户自定义模块
+
+  #### 核心模块
+
+  - node为javascript 提供了很多服务器级别的API 这些API绝大数都被包装到了一个具名的核心模块中了
+
+
+  - 例如文件操作的`fs` 核心	模块 http服务架构的`http` 模块 `pach`路径模块 `os`操作系统信息模块
+
+
+  -  以后只要我说这个模块是一个核心模块 你就要马上想到如果使用它 就必须
+
+
+  ```
+  1.var fs = require('fs') 
+  2.var http = require('http')
+  ```
+
+
+#### 模块系统
+
+- 在node中没有全局作用域的概念
+- 在node中只能通过require 方法来加载执行多个JavaScript脚本文件
+- require加载只能是执行其代码 文件与文件之间由于是模块作用域 所以不会有污染的问题
+  - 模块完全是封闭的
+  - 外部无法访问内部
+  - 内部也无法访问外部
+- 模块作用域固然带来了一些好处 可以加载执行多个文件  可以完全避免变量命名冲突污染的问题
+- 但是某些情况下 模块与模块是需要进行通信的
+- 在每一个模块中 都提供了一个对象 `exports`
+- 该对象默认是一个空对象
+- 你要做的就是把需要别外部访问使用的成员手动的挂载到`exports`接口对象中
+- 然后谁来`require`这个模块谁就可以得到模块内部的`exports`接口对象
+- 还有一些其他的规则  具体后面讲 以及如何在项目中去使用这种编程方方式
+
+#### 核心模块
+
+- 核心模块是由node 提供的一个个的具名模块 他们都有自己特殊标识 例如
+  - fs文件操作模块
+  - http网络服务构建模块
+  - os 操作系统信息模块
+  - path 路径处理模块
+  - 。。。。。
+- 所有核心模块在使用的时候都必须手动的先使用`require`方法加载然后才可以使用 例如
+  - `var fs = require('fs')`
+- http
+  - require
+  - 端口号
+  - ip地址定位计算机
+  - 端口号定位具体的应用程序
+
+- Content-type 
+  - 服务器最好把每次响应的数据是什么内容类型都有告诉客户端 而且要正确的告诉
+  - 不同的资源对应的Content-type是不一样的 具体参照http://tool.oschina.net./commons
+  - 对于文本类型的数据都加上编码 目的为了防止中文乱码
+- 通过网络发送文件
+  - 发送的并不是文件  本质上来讲发送是文件的内容
+  - 当浏览器收到服务器响应的内容之后 就会依据你的 Content-type 进行对应的解析处理
+
+## day2
+
+- 当你采用了无分号的代码风格的时候 只需要注意以下情况就不会有上面的问题；
+  - 当一行代码是以：
+    - (
+    - [
+    - `
+    - 开头的时候 则在前面补上一个分号用以避免一些语法解析错误 
+
+##     day3
+
+- 模块系统
+  - 核心模块
+  - 第三方模块
+  - 自己写的模块
+  - 加载规则以及加载机制
+  - 循环加载 
+- npm
+- package.json
+- Express
+  - 第三方  Web 开发框架
+  - 高度封装了 http 模块
+  - 更加专注于业务 而非底层细节
+  - 知其所以然、
+- 增删改查
+  - 使用文件来保存数据（锻炼异步编码）
+- MongoDB
+  - （所有方法都封装好了）
+
+
+
+- jQuery 不是专门用来遍历 jQuery 元素的
+  - 1.方便的遍历jQuery 元素
+  - 2.可以在不兼容forEach 的低版本浏览器中使用jQuery 的each 方法
+
+## node中的模块系统
+
+#### 使用node编写应用程序主要就是在使用
+
+- EcmaScript
+  - 和浏览器不一样在node中没有BOM、DOM
+- 核心模块
+  - 文件操作的 fs
+  - http服务的http
+  - url路径操作模块
+  - path路径处理模块
+  - os操作系统信息
+- 第三方模块
+  - art-template
+  - 必须通过npm来下载可以使用
+- 咱们自己写的模块
+  - 自己创建的文件
+
+#### 什么事模块化
+
+- 文件作用域
+- 通信规则
+  - 加载require
+  - 导出
+
+### CommonJS 模块规范
+
+JavaScript本身不支持模块化
+
+在node中的JavaScript还有一个很重要的概念 模块系统
+
+- 模块作用域
+- 使用require 方法使用来加载模块
+- 使用exports接口对象用来导出模块中的成员
+
+#### 加载`require`
+
+语法：
+
+```shell
+var 自定义变量名称  = require('模块')
+```
+
+两个作用：
+
+- 执行被加载模块中的代码
+- 得到被加载模块中的`require`导出接口对象
+
+#### 引用`exports`
+
+- node中是模块作用域 默认文件中所有成员只在当前文件模块有效
+- 对于希望可以被其他模块访问的成员 我们就需要把这些公开的成员都挂载到`exports`接口对象中就可以了
+
+导出多个成员：（必须在对象中）
+
+```shell
+exports.a = 123
+exports.b = 'hello'
+exports.c = function(){
+    console.log('ccc')
+}
+eexports.d = {
+    foo: 'bar'
+} 
+```
+
+导出单个成员：（拿到的就是：函数，字符串）
+
+```shell
+module.exprots = 'hello'
+```
+
+以下情况会覆盖
+
+```shell
+module.exprots = 'hello'
+// 以这个为准 后者会覆盖前者
+module.exprots = function(x , y){
+      return  x + y 
+}
+```
+
+也可以这样来导出多个成员
+
+```shell
+module.exports = {
+    add:  function(x , y){
+      return  x + y 
+      },
+      str： 'helllo'
+}
+```
+
+原理解析
+
+exports和`module.export` 的一个引用
+
+```shell
+console.log(exports === module.expeots)  // => ture
+exports.foo = 'bar'
+ //等价于
+ moudle.exports.foo = 'bar'
+```
+
+### npm 
+
+- node package manager
+
+##### npm网站
+
+```shell
+npmjs.com
+```
+
+##### npm命令行工具
+
+npm的第二层含义就是一个命令行工具 只要你安装了node 就已经安装了 npm
+
+npm 也有版本的概念
+
+可以通过在命令中输入
+
+```shell
+npm --version
+```
+
+升级 npm(自己升级自己)
+
+```shell
+snpm install --global npm
+```
+
+### npm常用命令
+
+- npm init
+  - npm init -y 可以跳过向导，快速生成
+- npm  install
+  - 一次性 dependencies 选项中的依赖项全部安装
+  - npm i
+- npm install 包名
+  - 只下载
+  - npm i 包名
+- npm install --save 包名
+  - 下载并保存依赖项（package.json  文件 dependencies 选项）
+  - npm i -S 包名
+- npm uninstall 包名
+  - 只删除  如果有依赖项会依然保存
+- npm uninstall  --save 包名
+  - 删除的同时 也会把依赖信息也去除
+  - npm un -S 包名
+- npm help 
+  - 查看使用帮助
+- npm 命令 --help
+  - 查看具体命令的使用帮助
+  - 例如 我忘记了uninstall 命令的简写了 这个时候 可以输入`npm uninstall --help`来查看使用帮助
+
+#### 解决npm 被墙问题
+
+npm 存储包文件的服务器在国外  有时候会被墙 速度很慢所以我们需要解决问题
+
+https://npm.taobao.org/  淘宝的开发团队把npm在国内做了一个备份
+
+安装淘宝的 cnpm：
+
+```shell
+npm install --global cnpm
+```
+
+接下来你安装的时候把之前的`npm`替换成`cnpm`
+
+### package.json
+
+我们建议每一个项目都要有一个`package.json`文件（包描述文件,就像产品的说明书一样）,给人踏实的感觉。
+
+这个文件可以通过	`npm init ` 的方式来自动初始化出来。
+
+```shell
+
+阿六@MSI MINGW64 ~/Desktop/npm-demo (master)
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (npm-demo)
+version: (1.0.0) 0.0.1
+description: 这是一个测试项目
+entry point: (index.js) main.js
+test command:
+git repository:
+keywords:
+author: liudongshuai
+license: (ISC)
+About to write to C:\Users\阿六\Desktop\npm-demo\package.json:
+
+{
+  "name": "npm-demo",
+  "version": "0.0.1",
+  "description": "这是一个测试项目",
+  "main": "main�.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "liudongshuai",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) yes
+
+```
+
+对于咱们目前来说 最有用的是那个`dependencies`选项可以用来帮我们保存第三方包的依赖信息。
+
+- 建议每个项目的根目录下都有一个`package.js`文件
+- 建议执行`npm install 包名的  `的时候都加上`--save`这个选项 目的是用来保存依赖项信息
+
+## 7.Express
+
+原生的http在某些方面表现不足以应对我们的开发需求 所以我们就需要使用框架来加快我们开发的效率框架的目的
+
+就是提高效率 让我们的代码更加高度统一
+
+在node中有很多 web 开发框架 我们这里以学习`express`为主
+
+https://www.expressjs.com.cn/
+
+#### 7.1.起步
+
+安装：
+
+```shell
+npm install --save express
+```
+
+hello world
+
+#### 修改完代码自动重启
+
+我们这里可以使用以第三方命名行工具 `nodemon`来帮我们解决频繁修改代码服务器问题。
+
+`nodemon`是一个基于nodejs开发的第三方命令工具 我们使用的时候需要独立安装
+
+```shell
+# 在任意目录执行该命令都可以
+# 也就是说 所有需要 --global 来安装的包都可以在任意目录执行
+npm install --global nodemon
+```
+
+安装完毕之后 使用
+
+```shell
+node app.js
+
+# 使用 nodemon
+nodemon app.js
+```
+
+检测是否安装成功	
+
+```shell
+nodemon -v
+```
+
+### 7.2基本路由
+
+路由器
+
+- 请求方法
+- 请求路径
+- 请求处理函数
+
+get
+
+```
+当你以get 方法请求  / 的时候 执行对应的处理函数
+app.get('/',function(req,res){
+res.send('hello world')
+})
+```
+
+post 
+
+```shell
+当你以post 方法请求  / 的时候 执行对应的处理函数
+app.posr('/',function(req,res){
+res.send('hello world')
+})
+```
+
+### 7.3 在 Express中配置使用`art-template`模板引擎
+
+- art-template-GitHub仓库
+- art-tempalate官方文档
+
+安装;
+
+```shell
+npm install --save art-template
+npm install --save express-art-template
+```
+
+配置：
+
+```shell
+app.engine('html',require('express-art-template'))
+```
+
+使用：
+
+```shell
+app.get('/',function(req,res){
+   # express默认会项目中的 views 目录找 index.html
+     res.render('404.html',{
+        title:'hhhhhhhhhhhhhhhh'
+    })
+})
+```
+
+如果希望修改默认的`views`视图渲染存储目录 可以
+
+```shell
+app.set('views',目录路径)
+```
+
+### 7.3在Express 获取表单get请求体数据
+
+Express 内置了一个APi 可以直接同过`res.query`
+
+```shell
+req.query
+```
+
+
+
+### 7.3在Express 获取表单POST 请求体数据
+
+在Express中没有内置获取表单元素 POST请求体 的API 这里我们需要使用第三方插件：`body-parser`
+
+安装：
+
+```shell
+npm install --save body-parser
+```
+
+配置:
+
+```shell
+var express = require('express')
+//0.引包
+var bodyParser = require('body-parser')
+
+var app = express()
+//配置body-parser
+//只要加入这个配置 则在req 请求对象上会多出来一个属性：body
+//也就是说你可以直接通过 req.body 来获取表单POST 请求数据了
+//parse application /x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended:false}))
+//parse application/json
+app.use(bodyParser.json())
+
+app.use(function(req,res){
+  res.setHeader('Content-Type','text/plain')
+  res.write('you posted:\n')
+  //可以通过1 req.body 来获取表单 post请求数据
+  rex.end(JSON.stringfy(req.body,null,2))
+})
+```
+
+## day2
+
+## 8.MongoDB
+
+### 8.1 关心型数据库 和非关系型数据库
+
+表就是关系
+
+或者说表与表之间存在关系、
+
+- 所有的关系型数据库 都需要通过`sql` 语言来操作
+- 所有的关系型数据库在操作之前都需要设计表结构
+- 而且数据表还支持约束
+  - 唯一的
+  - 主键
+  - 默认值
+  - 非空
+- 非关系型数据库非常的灵活
+- 有的非关系型数据库就是 key-value 对儿
+- 但是MongoDB是长的最像关系型数据库的非关系型数据库
+  - 数据库  => 数据库
+  - 数据表  => 集合（数组）
+  - 表记录  => (文档对象)
+- MongoDB 不需要设计表结构
+- 就说你可以任意往里面 存数据 没有结构性这么一说
+
+### 8.1启动和关闭数据库
+
+启动：
+
+```shell
+#mongodb 默认使用 mongodb 命令所处盘符根目录/data/db 作为自己的数据存储目录
+#所以在第一个执行该命令之前先自己手动新建一个/data/db
+mongod
+```
+
+如果想要修改默认的数据存储目录，可以
+
+```shell
+mongod --dbpath=数据村粗目录路径
+```
+
+停止：
+
+```shell
+在开启服务的控制台 直接ctrl + c 即可停止  
+或者直接关闭服务的控制台也可以
+```
+
+### 8.2链接数据库和退出
+
+连接：
+
+```shell
+#该命令默认连接本机 mongodb 服务
+mongo
+```
+
+退出：
+
+```shell
+#在连接状态下 exit 退出连接
+exit
+```
+
+### 8.3基本命令
+
+- `show dbs`
+  - 参看所有数据库
+- `db`
+  - 查看当前操作的数据库
+- `use数据库名称`
+  - 切换到指点的数据库，（如果没有会新建）
+- 插入数据
+
+### 8.4在node中如何操作MongoDB数据
+
+#### 8.41使用官方`mongodb`包来操作
+
+`	https://github.com/mongodb/node-mongodb-native`
+
+#### 8.42使用第三方mongodb来操作mongodb数据库
+
+第三方包:`mongoose基于mongod官方的``mongodb`包再一次做了封装
+
+### 8.5MongoDB数据库的基本概念
+
+- 可以有多个数据
+- 一个数据库中可以有多个集合（表）
+- 一个集合中可以有多个文档（表记录）
+- 文档结构很灵活 没有任何限制
+- MongoDB非常灵活 不需要Mysql 一样先创建数据库,表，设计表结构
+  - 在这里只需要：当你需要插入数据的时候 只需要指定数据库的哪个集合操作就可以了
+  - 一切都有MongoDB 来帮你自动完成建库键表这件事儿
+
+### 8.6官方指南
+
+##### 8.6.1设计Scheme 发布Model
+
+```shell
+var mongoose = require('mongoose')
+
+var Schema = mongoose.Schema
+
+// 链接数据库
+// 指定链接的数据库不需要存在 当你插入第一条数据之后 就会自动被创建出来
+
+mongoose.connect('mongodb://localhost:27017/test');
+
+// 设计几何结构(表机构)
+//字段名称就是 表结构中的属性名称
+// 约束的目的就是为了保证数据的完整性 不要有脏数据
+const userSchema = new Schema({
+    username: {
+        type: String,
+        required: true //必须有
+    },
+    password: {
+        type: String,
+        required: true //必须有
+    },
+    email:{
+        type:String
+    }
+});
+
+// 3. 将文档结构发布为模型
+//    mongoose.model 方法就是用来讲一个架构发布为 model
+    //  第一个参数 传入一个大词名词单数字符串用来表示你的数据库名称
+const User = mongoose.model('User', userSchema);
+
+//4. 当我们有了模型构造函数之后 就可以 使用这个构造函数对 User几个中的数据为所欲为了
+```
+
+##### 8.6.2增加数据
+
+```shell
+var admin = new User({
+    username:'admin',
+    password:'123456',
+    email:'admin@admin.com'
+})
+
+admin.save(function(err,ret){
+    if(err){
+        console.log('保存失败');
+    }else{
+        console.log('保存成功了');
+        console.log(ret);
+    }
+})
+```
+
+##### 8.6.查询
+
+查询所有
+
+```shell
+User.find({
+    username: 'zs'
+}, function (err, ret) {
+    if (err) {
+        console.log('查询失败');
+    } else {
+        console.log(ret);
+    }
+})
+```
+
+按条件查询所有
+
+```shell
+User.find({
+    username: 'zs'
+}, function (err, ret) {
+    if (err) {
+        console.log('查询失败');
+    } else {
+        console.log(ret);
+    }
+})
+```
+
+查询单个
+
+```shell
+User.findOne({
+    username: 'zs'
+}, function (err, ret) {
+    if (err) {
+        console.log('查询失败');
+    } else {
+        console.log(ret);
+    }
+})	
+```
+
+##### 8.7删除数据
+
+```shell
+User.remove({
+    username: 'zs'
+}, function (err, ret) {
+    if (err) {
+        console.log('删除失败');
+    } else {
+        console.log('删除成功');
+        console.log(ret);
+    }
+})
+```
+
+##### 8.8更新数据
+
+```shell
+User.findByIdAndUpdate('6131e043401e40fcabb6aaf0', {
+    password: 123
+}, function (err, ret) {
+    if (err) {
+        console.log('更新失败');
+    } else {
+        console.log(ret);
+        console.log('更新成功');
+
+    }
+})
+```
+
+根据条件删除一个
+
+```shell
+findOneAndRemove
+```
+
+根据id删除一个
+
+```shell
+findOneAndRemove(id,
+```
+
+根据条件更新所有
+
+```shell
+update
+```
+
+根据指定条件更新一个
+
+```shell
+findOneAndUpdate
+```
+
+### 9.0Node 中的其他成员
+
+在每个模块中 除了`require`.`exports`等模块相关的API之外 还有特殊的成员
+
+- `__dirname`可以用来获取当前文件模块所属目录的绝对路径
+- `__dirname`可以用来获取当前文件的绝对路径
+- `__dirname`和`__dirname`是不受执行node命令所属路径影响的
+
+在文件操作中 使用相对路径是不可靠的 因为 在node 中 文件操作的路径被设计为相对于执行node命令所处的路径、（不是 bug 人家设计是由使用场景）
+
+所有为了解决这个问题 很简单 只需要把相对路径变为绝对路径就可以了
+
+那这里 我们就可以使用`__dirname`或者`__filename`来帮我们解决这个问题了	
+
+在拼接路径的过程中 为了避免手动拼接带来的一些低级错误 所以推荐多使用path.join(来辅助拼接、
+
+所以为了尽量避免刚才所描述的问题 大家以后在文件操作中使用的相对路径都统一转换为动态的绝对路径
+
+补充：模块中的路径标识和这里的路径没关系 不受影响（相当于文件模块）
+
+## 10.promise
+
+callback  hell
+
+![image-20210904100023287](C:\Users\阿六\AppData\Roaming\Typora\typora-user-images\image-20210904100023287.png)
+
+无法保证顺序的代码
+
+```shell
+var fs = require('fs')
+
+
+fs.readFile('./data/a.txt', 'utf8', function (err, data) {
+    if (err) {
+        // console.log('读取失败');
+        //抛出异常
+        //    1.阻止程序的执行
+        //    2.把错误信息打印到控制台
+        throw err
+    }
+    console.log(data);
+})
+
+
+fs.readFile('./data/b.txt', 'utf8', function (err, data) {
+    if (err) {
+        // console.log('读取失败');
+        //抛出异常
+        //    1.阻止程序的执行
+        //    2.把错误信息打印到控制台
+        throw err
+    }
+    console.log(data);
+})
+
+fs.readFile('./data/c.txt', 'utf8', function (err, data) {
+    if (err) {
+        // console.log('读取失败');
+        //抛出异常
+        //    1.阻止程序的执行
+        //    2.把错误信息打印到控制台
+        throw err
+    }
+    console.log(data);
+})
+```
+
+通过回调的方式保证顺序
+
+```shell
+var fs = require('fs')
+
+
+fs.readFile('./data/a.txt', 'utf8', function (err, data) {
+    if (err) {
+        // console.log('读取失败');
+        //抛出异常
+        //    1.阻止程序的执行
+        //    2.把错误信息打印到控制台
+        throw err
+    }
+    console.log(data);
+    fs.readFile('./data/b.txt', 'utf8', function (err, data) {
+        if (err) {
+            // console.log('读取失败');
+            //抛出异常
+            //    1.阻止程序的执行
+            //    2.把错误信息打印到控制台
+            throw err
+        }
+        console.log(data);
+        fs.readFile('./data/c.txt', 'utf8', function (err, data) {
+            if (err) {
+                // console.log('读取失败');
+                //抛出异常
+                //    1.阻止程序的执行
+                //    2.把错误信息打印到控制台
+                throw err
+            }
+            console.log(data);
+        })
+    })
+})
+```
+
+为了解决以上编码方式带来的问题（回调地狱）所以在EcmaScript 6 中新增了一个API `Promise`
+
+- Promise的英文就是承诺 保证的意思（ i promise you )
+
+
+
+Promise 基本语法：
+
+```shell
+// 在 EcmaScript 6 中新增了一个API Promise
+// Promise 是一个构造函数
+// 创建 Promise 容器
+var fs = require('fs')
+
+const {
+    fstat
+} = require("fs")
+
+	
+//  1.给别人一个承诺  I promise you
+//   promise 容器一旦创建  就开始执行里面的代码
+
+var p1 = new Promise(function (resolve, reject) {
+
+    fs.readFile('./data/a.txt', 'utf8', function (err, data) {
+        if (err) {
+            // 失败了  承诺容器中的 认为失败了
+            //把容器的Pending 状态改为Rejected
+
+            //调用 reject 就相当于 调用了 then 方法的第二个参数函数
+
+            reject(err);
+        } else {
+            // 承诺容器中的任务成功了
+            // console.log(data);
+            // 把容器的Pending 状态改为成功 Resolved
+            // 也就是说 这里调用的 resolve 方法实际上就是 then 方法传递的那个 function
+
+            resolve(data)
+        }
+    })
+
+})
+
+// p1 就是那个承诺
+
+//当 p1 成功了然后(then)做制定的操作
+//then方法接收的function 就是容器中的resolve 函数
+p1
+    .then(function (data) {
+        console.log(data);
+    }, function (err) {
+        console.log('读取文件失败了', err);
+    })
+```
+
+通过回调的顺序来保证顺序
+
+```shell
+// 在 EcmaScript 6 中新增了一个API Promise
+// Promise 是一个构造函数
+// 创建 Promise 容器
+var fs = require('fs')
+
+const {
+    fstat
+} = require("fs")
+
+
+//  1.给别人一个承诺  I promise you
+//   promise 容器一旦创建  就开始执行里面的代码
+
+var p1 = new Promise(function (resolve, reject) {
+
+    fs.readFile('./data/a.txt', 'utf8', function (err, data) {
+        if (err) {
+            // 失败了  承诺容器中的 认为失败了
+            //把容器的Pending 状态改为Rejected
+
+            //调用 reject 就相当于 调用了 then 方法的第二个参数函数
+
+            reject(err);
+        } else {
+            // 承诺容器中的任务成功了
+            // console.log(data);
+            // 把容器的Pending 状态改为成功 Resolved
+            // 也就是说 这里调用的 resolve 方法实际上就是 then 方法传递的那个 function
+
+            resolve(data)
+        }
+    })
+})
+
+var p2 = new Promise(function (resolve, reject) {
+
+    fs.readFile('./data/b.txt', 'utf8', function (err, data) {
+        if (err) {
+            reject(err);
+        } else {
+            resolve(data)
+        }
+    })
+})
+
+var p3 = new Promise(function (resolve, reject) {
+
+    fs.readFile('./data/c.txt', 'utf8', function (err, data) {
+        if (err) {
+            reject(err);
+        } else {
+            resolve(data)
+        }
+    })
+})
+// p1 就是那个承诺
+
+//当 p1 成功了然后(then)做制定的操作
+//then方法接收的function 就是容器中的resolve 函数
+p1
+    .then(function (data) {
+        console.log(data);
+        //当 p1 读取成功的时候
+        // 当前函数中 return 的时候可以在后面的 then 中function 接收到
+        // 当你 return 123 后面就接收到123
+        //   return 'hello'  后面就接收到 hello
+        //   没有return 后面收到就是 undefined
+        // 上面 那些 return 的数据 没什么 卵用 
+        //  真正有用的是 我们可以 return 一个 promise 对象
+        // 当 return 一个 promise 对象的时候 后续的 then中的方法 的第一个参数 会 作为  p2 的 resolve 方法
+
+        return p2
+
+    }, function (err) {
+        console.log('读取文件失败了', err);
+    })
+
+    .then(function (data) {
+        console.log(data);
+        return p3
+    })
+
+    .then(function (data) {
+        console.log(data);
+    })
+```
+
+
+
+封装Promise版本`readFile`
+
+```shell
+var fs = require('fs')
+
+function pReadFile(filePath) {
+    return new Promise(function (resolve, reject) {
+
+        fs.readFile(filePath, 'utf8', function (err, data) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(data)
+            }
+        })
+    })
+}
+
+pReadFile('./data/a.txt')
+    .then(function (data) {
+        console.log(data);
+        return pReadFile('./data/b.txt')
+    })
+    .then(function (data) {
+        console.log(data);
+        return pReadFile('./data/c.txt')
+    })
+    .then(function (data) {
+        console.log(data);
+    })
+```
+

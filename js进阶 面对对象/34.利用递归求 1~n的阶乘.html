@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //34.利用递归求 1~n的阶乘 1*2*3*4*...n
+        var num = 0;
+
+        function fn(n) {
+            if (n == 1) {
+                return 1;
+            }
+            return n * fn(n - 1)
+        }
+        console.log(fn(3));
+        console.log(fn(4));
+        console.log(fn(1));
+        // 详情思路  加假如用户输入的是3
+        // return  3 * fn（2） * fn（1）
+    </script>
+</body>
+
+</html>

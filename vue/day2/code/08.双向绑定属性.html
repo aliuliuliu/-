@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 希望Vue 能控制下面的这个div 帮我们把数据填充到 div 内部· -->
+    <div id="app">
+        <p>用户的名字是：{{ username }}</p>
+        <input type="text" v-model="username">
+        <hr>
+        <input type="text" :value="username">
+        <hr>
+        <select v-model="city">
+            <option value=" ">请选择城市</option>
+            <option value="1">柘城</option>
+            <option value="2">安平</option>
+            <option value="3">商丘</option>
+            <option value="4">宁陵</option>
+        </select>
+    </div>
+    <!-- 1.导入vue 的库文件  在 window 全局就有了Vue 这个构造函数-->
+    <script src="lib/vue.js"></script>
+    <!-- 2.创建vue的实例对象 -->
+    <script>
+        //创建 vue的实例对象
+        const vm = new Vue({
+            //el 属性是固定的写法 表示当前 vm 实例要控制页面上的哪一个区域 接收的值是一个选择器
+            el: '#app',
+            //data 对象就是要填充的数据
+            data: {
+                username: 'zhangshan',
+                city: ' '
+            },
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getrandom (min,max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getrandom(1,50);
+            for (var i = 1; i <= 10 ; i++) {
+            var age =prompt('请输入你猜的数')
+            if(age > random){
+                alert('猜大了')
+            }else if(age < random){
+                alert('猜小了')
+            } else {
+                alert('猜对了')
+                break ;
+            }
+           
+        }
+       
+        alert ('很遗憾 你已经没有次数了');
+       
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

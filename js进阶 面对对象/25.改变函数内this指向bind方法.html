@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>
+        //3.bind() 绑定  捆绑的意思
+        // var o = {
+        //     name: 'andy'
+        // };
+
+        // function fn(a, b) {
+        //     console.log(this);
+        //     console.log(a + b);
+        // }
+        // var f = fn.bind(o, 1, 2);
+        // f();
+        // //1.不会调用原来的函数  可以改变原来函数的内部的this指向、
+        // //2.返回的是原函数改变this 之后产生的新函数
+        // //3.如果有的函数不需要立即调用 但是又想改变这个函数内部的this指向 此时用bind
+        // //4.我们又一个按钮 当我们点击了之后  就禁用这个按钮 3秒钟 之后开启这个按钮
+        // var btn = document.querySelector('button');
+        // btn.onclick = function () {
+        //     this.disabled = true; // 这个this 指向的是 btn 这个按钮
+        //     // var that = this
+        //     setTimeout(function () {
+        //         // that.disabled = false  // 定时器函数里面的this 指向的是window\
+        //         this.disabled = false // 此时定时器函数里面的this 指向的是btn
+        //     }.bind(this), 3000) // 这个this 指向的也是btn 这个对象
+        // }
+        var btns = document.querySelectorAll('button');
+        for (i = 0; i < btns.length; i++){
+            btns[i].onclick = function(){
+                this.disabled = true;
+                setTimeout(function(){
+                    this.disabled = false;
+                }.bind(this),2000);
+            }
+        }
+    </script>
+</body>
+
+</html>

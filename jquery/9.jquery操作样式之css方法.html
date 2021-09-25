@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        $(function(){
+            console.log($("div").css("width"));
+            // $("div").css("width","200"); //属性名一定要用逗号分隔
+            $("div").css({
+                width:400,
+                height:400,
+                backgroundColor:"red"
+                // 如果是复合属性则必须采取驼峰命名法 如果值不是数字 则需要加引号
+            })
+        })
+    </script>
+</body>
+</html>

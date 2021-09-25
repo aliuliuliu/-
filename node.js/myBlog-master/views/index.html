@@ -1,0 +1,76 @@
+{{extend './layout.html'}}
+{{block 'head'}}
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-width: 1040px;
+  }
+  html {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: rgb(235,229,229);
+  }
+  .main {
+    height: calc(100vh - 160px);
+    overflow: auto;
+    margin: auto auto;
+    width: 100%;
+  }
+  .container {
+    width: 80%;
+    height: calc(100vh - 160px);
+  }
+  .media {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 5px 0;
+  }
+  .media-left {
+    line-height: 75px;
+    margin-right: 10px;
+  }
+  .media-body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .user {
+    color: #000;
+    font-weight: 700;
+  }
+</style>
+{{/block}}
+{{block 'content'}}
+<div class="main">
+  <ul class="container">
+    {{ each topics }}
+    <li class="media">
+      <div class="media-left">
+        <a href="#">
+          <img width="40" height="40" class="media-object" src="/public/img/avatar-max-img.png" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <p><span class="user">{{ $value.nickname }}</span>  发表了话题：<a href="/topics/123"> {{ $value.topic }} </a></p>
+        <p>内容： {{ $value.content }}</p>
+        <p>• 2 人关注 • 1 个回复 • 187 次浏览 • 2020-11-17 10:54</p>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script>
+  $('#mydropdown').click(function() {
+    $('#mydropdown').show();
+  })
+</script>
+{{/block}}

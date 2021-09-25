@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 希望Vue 能控制下面的这个div 帮我们把数据填充到 div 内部· -->
+    <div id="app">
+        <input type="text" @keyup.esc="clearInput"@keyup.enter="ajax">
+    </div>
+    <!-- 1.导入vue 的库文件  在 window 全局就有了Vue 这个构造函数-->
+    <script src="lib/vue.js"></script>
+    <!-- 2.创建vue的实例对象 -->
+    <script>
+        //创建 vue的实例对象
+        const vm = new Vue({
+            //el 属性是固定的写法 表示当前 vm 实例要控制页面上的哪一个区域 接收的值是一个选择器
+            el: '#app',
+            //data 对象就是要填充的数据
+            data: {
+                username: 'zs'
+            },
+            methods: {
+                clearInput(e) {
+                    console.log(111);
+                    e.target.value = ''
+                },
+                ajax(){
+                    console.log('ajax');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

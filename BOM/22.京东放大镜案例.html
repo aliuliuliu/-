@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            position: relative;
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-color: rgb(177, 177, 177);
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+        .two {
+            position: relative;
+            float: left;
+            width: 600px;
+            height: 600px;
+            background-color: rgb(197, 197, 197);
+            display: none;
+        }
+        .two img {
+            /* width: 100%;
+            height: 150%; */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .one .one1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 200, 50);
+            cursor:move ;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="one1"></div>
+    </div>
+    <div class="two">
+        <img src="images/oppo.png" alt="" class="bigImg">
+    </div>
+    <script>
+        //1.获取元素
+        var one = document.querySelector('.one');
+        var two = document.querySelector('.two')
+        var one1 = document.querySelector('.one1')
+        // 鼠标经过 one显示  one1 。 two
+        one.addEventListener('mouseover',function(){
+            one1.style.display = 'block';
+            two.style.display = 'block'
+        })// 鼠标离开one 隐藏  one1 。 two
+        one.addEventListener('mouseout',function(){
+            one1.style.display = 'none';
+            two.style.display = 'none'
+        })
+        //2.鼠标移动的时候 让黄色的盒子跟着鼠标走
+        one.addEventListener('mousemove',function(e){
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this .offsetTop;
+            // （2）.减去盒子高度 200 的一半是 100 就是我们one1 的最终left 和top 值了
+            var one1x =  x - one1.offsetWidth  / 2 ;
+            var one1y =  y - one1.offsetHeight  / 2 ;
+            // 遮挡层的最大移动距离
+            var one1max = one.offsetWidth - one1.offsetWidth;
+            // console.log(x,y);
+            //(4) 如果x 坐标小于了0 就让他停在 0 的位置
+            if(one1x <= 0){
+                one1x = 0;
+            }else if (one1x >= one1max){
+                one1x = one1max;
+            }
+            if(one1y <= 0){
+                one1y = 0;
+            }else if (one1y >= one1max){
+                one1y = one1max;
+            }
+            one1.style.left = one1x +'px';
+            one1.style.top =  one1y + 'px';
+            // 大图片的移动距离  = 遮挡层移动距离 * 大图片最大移动距离 / 遮挡层的最大移动距离
+            //大图
+            var bigImg = document.querySelector('.bigImg');
+            var bigMax = bigImg.offsetWidth - two.offsetWidth;
+            var bigX = one1x* bigMax  / one1max;
+            var bigY = one1y* bigMax  / one1max;
+            bigImg.style.left = -bigX +'px';
+            bigImg.style.top = -bigY +'px';
+        }) 
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 希望Vue 能控制下面的这个div 帮我们把数据填充到 div 内部· -->
+    <div id="app">
+        <p>count的值是:{{ count }}</p>
+        <!-- 如果 count 是偶数 则背景变为红色 否则 取消背景颜色 -->
+        <!-- <button @click="add">+N</button> -->
+        <!-- vue 提供了内置变量 名字叫做 $event 它就是原生DOM的事件对象e -->
+        <button @click="add(1,$event)">+N</button>
+    </div>
+    <!-- 1.导入vue 的库文件  在 window 全局就有了Vue 这个构造函数-->
+    <script src="lib/vue.js"></script>
+    <!-- 2.创建vue的实例对象 -->
+    <script>
+        //创建 vue的实例对象
+        const vm = new Vue({
+            //el 属性是固定的写法 表示当前 vm 实例要控制页面上的哪一个区域 接收的值是一个选择器
+            el: '#app',
+            //data 对象就是要填充的数据
+            data: {
+                count: 0
+            },
+            methods: {
+                add(n,e) {
+                    this.count += n
+
+                    //判断 this.count 的值是否为偶数
+                    if (this.count % 2 === 0) {
+                        //偶数
+                        e.target.style.backgroundColor = 'pink'
+                    } else {
+                        //奇数
+                        e.target.style.backgroundColor = ''
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,416 @@
+body {
+    width: 100%;
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #000;
+    line-height: 1.5;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    /* height: 1500px; */
+}
+
+div {
+    box-sizing: border-box;
+}
+
+a {
+    color: #222;
+}
+
+/* 搜索模块 */
+.search-index {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    /* 固定的盒子应该有宽度 */
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    /* background-color: pink; */
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /* overflow: hidden; */
+}
+
+.search {
+    position: relative;
+    flex: 1;
+    height: 26px;
+    border: 1px solid #ccc;
+    margin: 7px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #666;
+    line-height: 24px;
+    padding-left: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png)no-repeat -59px -279px;
+    background-size: 104px auto;
+    /* margin:5px; */
+}
+
+.user {
+    width: 44px;
+    height: 44px;
+    /* background-color: purple; */
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+}
+
+.user::before {
+    content: "";
+    width: 23px;
+    height: 23px;
+    display: block;
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px auto;
+    margin: 4px auto -2px;
+}
+.goBack {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    background-color: pink;
+    
+}
+.focus {
+    position: relative;
+    margin-top: 44px;
+    overflow: hidden;
+}
+.focus ul li {
+    float: left;
+    width: 20%;
+}
+.focus ul {
+    overflow: hidden;
+    width: 500%;
+    margin-left: -100%;
+}
+.focus img {
+    width: 100%;
+}
+.focus ol {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 999;
+}
+.focus ol li {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: #fff;
+    transition: all .3s;
+}
+.focus ol li.current {
+    width: 15px;
+}
+/* 局部导航栏 */
+.local-nav {
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    margin: 3px 4px;
+    border-radius: 8px;
+}
+.local-nav li {
+    flex: 1;
+}
+.local-nav a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* color: #222; */
+}
+.local-nav li [class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    /* background-color: pink; */
+    margin-top: 8px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px auto;
+}
+.local-nav li .local-nav-icon-icon2 {
+    background-position: 0 -32px;
+}
+.local-nav li .local-nav-icon-icon3 {
+    background-position: 0 -64px;
+}
+.local-nav li .local-nav-icon-icon4 {
+    background-position: 0 -96px;
+}
+.local-nav li .local-nav-icon-icon5 {
+    background-position: 0 -128px;
+}
+
+nav {
+    border-radius: 8px;
+    margin: 0 4px 3px;
+    overflow: hidden;
+}
+.nav-common {
+    display: flex;
+    height: 88px;
+    background: -webkit-linear-gradient(left, #FA5A55, #FA994D)
+}
+.nav-common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4b90eD, #53BCED)
+}
+
+.nav-common:nth-child(3) {
+    background: -webkit-linear-gradient(left, #34c2A9, #6CD559)
+}
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.nav-common:nth-child(2) {
+    margin: 3px 0;
+}
+
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+.nav-items a {
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-size: 14px;
+    /* 文字阴影 */
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav-items a:nth-child(1) {
+    flex: 1;
+    border-bottom: 1px solid #fff;
+}
+
+.nav-items:nth-child(1) a {
+    border: 0;
+    background: url(../images/hotel.png)no-repeat bottom center;
+    background-size: 121px auto;
+}
+
+.subnav-entry {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subnav-entry li {
+    align-content: center;
+    flex: 20%;
+}
+
+.subnav-entry a {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subnav-entry li [class^="subnav-entry-icon"] {
+    width: 28px;
+    height: 28px;
+    background-color: salmon;
+    margin-top: 4px;
+    background: url(../images/subnav-bg.png)no-repeat;
+    background-size: 28px auto;
+}
+
+.subnav-entry li .subnav-entry-icon2 {
+    background: url(../images/subnav-bg.png)no-repeat 0 -28px;
+    background-size: 28px auto;
+}
+
+.subnav-entry li .subnav-entry-icon3 {
+    background: url(../images/subnav-bg.png)no-repeat 0 -56px;
+    background-size: 28px auto;
+}
+
+.subnav-entry li .subnav-entry-icon4 {
+    background: url(../images/subnav-bg.png)no-repeat 0 -84px;
+    background-size: 28px auto;
+}
+
+.subnav-entry li .subnav-entry-icon5 {
+    background: url(../images/subnav-bg.png)no-repeat 0 -112px;
+    background-size: 28px auto;
+}
+
+.subnav-entry li .subnav-entry-icon6 {
+    background: url(../images/subnav-bg.png)no-repeat 0 -140px;
+    background-size: 28px auto;
+}
+
+.subnav-entry li .subnav-entry-icon7 {
+    background: url(../images/subnav-bg.png)no-repeat 0 -168px;
+    background-size: 28px auto;
+}
+
+.subnav-entry li .subnav-entry-icon8 {
+    background: url(../images/subnav-bg.png)no-repeat 0 -196px;
+    background-size: 28px auto;
+}
+
+.subnav-entry li .subnav-entry-icon9 {
+    background: url(../images/subnav-bg.png)no-repeat 0 -224px;
+    background-size: 28px auto;
+}
+
+.subnav-entry li .subnav-entry-icon10 {
+    background: url(../images/subnav-bg.png)no-repeat 0 -252px;
+    background-size: 28px auto;
+}
+
+.sales-box {
+    border-top: 1px solid #bbb;
+    background-color: #fff;
+    margin: 4px;
+}
+
+.sales-hd {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sales-hd h2 {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-indent: -999px;
+    /* overflow: hidden; */
+}
+
+.sales-hd h2::after {
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    content: "";
+    width: 79px;
+    height: 15px;
+    background: url(../images/hot.png)no-repeat 0 -20px;
+    background-size: 79px auto;
+}
+
+.sales-hd a {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background: -webkit-linear-gradient(left, #FF506C, #FF6BC6);
+    border-radius: 15px;
+    padding: 3px 20px 3px 10px;
+    color: #FFF;
+}
+
+.sales-hd a::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.sales-bd .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: cente;
+}
+
+.sales-bd .row a {
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.row a img {
+    width: 100%;
+}
+
+.row a:nth-child(1) {
+    border-right: 1px solid #eee;
+}
+
+.footer {
+    display: flex;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-top: 5px;
+    color: #000;
+}
+
+.footer .footer-row {
+    flex: 1;
+}
+
+.footer-row a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-row a .footer-row-bg {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/phone.png);
+    background-size: 30px auto;
+    margin-bottom: 2px;
+}
+
+.footer-row a .footer-row-bg2 {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/xiazai.png)no-repeat;
+    background-size: 30px auto;
+    margin-bottom: 2px;
+}
+
+.footer-row a .footer-row-bg3 {
+    /* display: block; */
+    width: 20px;
+    height: 20px;
+    background: url(../images/wo.png)no-repeat;
+    background-size: 20px auto;
+    margin-bottom: 2px;
+    margin-top: 12px;
+}

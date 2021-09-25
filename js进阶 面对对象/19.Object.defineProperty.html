@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Onject.defineProperty() 定义新属性或修改原有的属性
+        var obj = {
+            id: 1,
+            pnam: '小米',
+            price: 1999
+        };
+        //1.以前的对象添加和修改属性的方式
+        // obj.sum = 1000;
+        // obj.price = 99
+        // console.log(obj);
+        //2.Onject.defineProperty() 定义新属性或修改原有的属性
+        Object.defineProperty(obj, 'sum', {
+            value: 1000,
+            enumerable:true
+        })
+        console.log(obj);
+        Object.defineProperty(obj, 'price', {
+            value: 9.9
+        })
+        console.log(obj);
+        Object.defineProperty(obj, 'id', {
+            //不允许修改这个属性值
+            writable : false
+        })
+        obj.id = 2;
+        console.log(obj);
+        console.log(obj);
+        Object.defineProperty(obj, 'address', {
+            value : '中国山东技术找蓝翔 xx 单元',
+            //不允许修改这个属性值
+            writable : false,
+            // enumerable 如果值为false 则不允许遍历  默认的值是false
+            enumerable:false,
+            configurable:false
+        })
+        console.log(obj);
+        console.log(Object.keys(obj));
+        delete obj.address;
+        console.log(obj);
+        delete obj.pnam;
+    </script>
+</body>
+
+</html>
